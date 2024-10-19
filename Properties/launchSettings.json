@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "BMSManagerRebuilt (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "BMSManagerRebuilt (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
