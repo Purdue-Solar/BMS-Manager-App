@@ -1,6 +1,6 @@
 # BMS-Manager-App
 
-Before 10/19/2024
+Before 10/19/2024\n
 Application run on .Net8 Framework with WinUI 3 for GUI
 Added Serial Port Detection
 Added GUI
