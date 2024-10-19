@@ -29,25 +29,25 @@
     <AppXManifest Include="D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-10-19T17:25:56.756</Modified>
+      <Modified>2024-10-19T19:00:46.138</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-10-19T17:25:31.715</Modified>
+      <Modified>2024-10-19T19:00:46.005</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\BMSManagerRebuilt.runtimeconfig.json">
       <PackagePath>BMSManagerRebuilt.runtimeconfig.json</PackagePath>
-      <Modified>2024-10-19T17:25:31.517</Modified>
+      <Modified>2024-10-19T17:58:34.137</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\BMSManagerRebuilt.dll">
       <PackagePath>BMSManagerRebuilt.dll</PackagePath>
-      <Modified>2024-10-19T17:25:56.342</Modified>
+      <Modified>2024-10-19T19:00:45.861</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>BMSManagerRebuilt.exe</PackagePath>
-      <Modified>2024-10-19T17:25:56.351</Modified>
+      <Modified>2024-10-19T19:00:45.863</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Admin\.nuget\packages\microsoft.web.webview2\1.0.2651.64\runtimes\win-x64\native\WebView2Loader.dll">
       <PackagePath>runtimes\win-x64\native\WebView2Loader.dll</PackagePath>
@@ -955,7 +955,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\BMSManagerRebuilt.deps.json">
       <PackagePath>BMSManagerRebuilt.deps.json</PackagePath>
-      <Modified>2024-10-19T17:25:31.423</Modified>
+      <Modified>2024-10-19T17:58:34.031</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projects\App\BMS-Manager-App\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>

@@ -51,6 +51,8 @@ namespace BMSManagerRebuilt
         static ILoggerFactory factory = LoggerFactory.Create(builder => builder.AddConsole().AddDebug().SetMinimumLevel(LogLevel.Debug));
         ILogger logger = factory.CreateLogger<MainWindow>();
 
+
+
         public MainWindow()
         {
             this.InitializeComponent();
@@ -67,7 +69,7 @@ namespace BMSManagerRebuilt
                 value = processTextBox();
                 logger.LogDebug("{temp} is changed into {value}", temp, value);
                 WritePort(value, tries);
-                myButton_Switch();       
+                myButton_Switch();
             }
         }
         private void myButton_Switch()
@@ -97,48 +99,52 @@ namespace BMSManagerRebuilt
         private void PortDetect(object sender, RoutedEventArgs e)
         {
             logger.LogDebug("Run Port Detection");
-            if (serialPort.IsOpen)
-            {
-                serialPort.Close();
+            if (serialPort != null) {
+                if (serialPort.IsOpen)
+                {
+                    serialPort.Close();
+                }
             }
             PortsBox.ItemsSource = null;
-            PortsBox.Items.Clear();
+            PortsBox.SelectedIndex = -1;
             portsNames = SerialPort.GetPortNames();
             PortsBox.ItemsSource = portsNames;
         }
         private void PortSelect(object sender, SelectionChangedEventArgs e)
         {
             int tries = 22;
+            logger.LogDebug("{length}", portsNames.Length);
             if (portsNames.Length > 0)
             {
-                if (e.AddedItems[0].ToString() != "")
+                if (e.AddedItems != null)
                 { 
                     selectedPortName = e.AddedItems[0].ToString();
                     serialPort = new SerialPort(selectedPortName, 9600, Parity.None, 8, StopBits.One); 
                 }
-            }
-            while (tries > 0)
-            {
-                try
+                while (tries > 0)
                 {
-                    serialPort.Handshake = Handshake.XOnXOff;
-                    if (!serialPort.IsOpen)
+                    try
                     {
-                        serialPort.Open();
-                        Thread.Sleep(4000);
+                        serialPort.Handshake = Handshake.XOnXOff;
+                        if (!serialPort.IsOpen)
+                        {
+                            serialPort.Open();
+                            Thread.Sleep(1);
+                        }
+                        //serialPort.Write(text);
+                        //Console.WriteLine("Port write");
+                        break;
                     }
-                    //serialPort.Write(text);
-                    //Console.WriteLine("Port write");
-                    break;
+                    catch (UnauthorizedAccessException)
+                    {
+                        tries--;
+                        Thread.Sleep(1);
+                    }
                 }
-                catch (UnauthorizedAccessException)
-                {
-                    tries--;
-                    Thread.Sleep(1);
-                }
+                logger.LogDebug("{port} is selected and opened", selectedPortName);
             }
-            logger.LogDebug("{port} is selected and opened", selectedPortName);
         }
+            
         //private void AppClose(object sender, CancelEventArgs e)
         //{
         //    if (serialPort.IsOpen)
