@@ -7,34 +7,36 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    <Grid Background="Gray">
+    <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="0">
-            <TextBlock Text="PSR Battery Management System .0" FontSize="20"/>
+            <TextBlock Text="PSR Battery Management System .0" Foreground="Black"  FontSize="20"/>
         </StackPanel>
         
-        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="5">
-            <Button x:Name="PortDetectButton" Click="PortDetect" HorizontalAlignment="Left" Width="100">Detect</Button>
-            <ComboBox x:Name="PortsBox" PlaceholderText="Pick a Ports" Width="200" ItemsSource="{x:Bind portsNames}" SelectionChanged="PortSelect"/>
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="5" Grid.Row="1">
+            <Button CornerRadius="0" BorderBrush="black" BorderThickness="2" x:Name="PortDetectButton" Background="Gray" Click="PortDetect" HorizontalAlignment="Left" Width="90">Detect</Button>
+            <ComboBox x:Name="PortsBox" Background="Gray" PlaceholderText="Pick a Ports" Width="200" ItemsSource="{x:Bind portsNames}" SelectionChanged="PortSelect"/>
+            <TextBlock x:Name="PortStatusText" Text="Port Status: Disconnected" HorizontalAlignment="Right" FontSize="13" Foreground="Black"/>
+        </StackPanel>
+            
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="6" Grid.Row="1">
+            <Button CornerRadius="0" BorderBrush="black" BorderThickness="2" Click="DisconnectPort" x:Name="PortDisconnectButton" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Background="Gray">Disconnect</Button>
+            
         </StackPanel>
 
-        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="6">
-            <Button x:Name="PortConnectButton" HorizontalAlignment="Left" Width="100">Connect</Button>
-        </StackPanel>
-
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="5">
-            <Button x:Name="myButton" Click="myButton_Click">Edit</Button>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="6" Grid.Row="2">
+            <Button Width="100" CornerRadius="0" BorderBrush="black" BorderThickness="2" x:Name="myButton" Click="myButton_Click" VerticalAlignment="Center" HorizontalAlignment="Right" Background="Gray">Edit</Button>
         </StackPanel>
 
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column ="0">
-            <TextBlock Text="Something Something variable" FontSize="12"/>
-            <TextBlock Name="SerialDataRead" FontSize="12"/>
+            <TextBlock Text="Something Something variable" FontSize="12" Foreground="Black"/>
+            <TextBlock Name="SerialDataRead" FontSize="12" Foreground="Black"/>
         </StackPanel>
         <StackPanel VerticalAlignment="Center" Grid.Column ="0">
-            <TextBox Height="18" Name="textBoxTest" Width="50" Margin="10,5" TextChanged="TextBoxChange" KeyDown="TextBoxKeyDown"/>
+            <TextBox Height="18" Name="textBoxTest" Width="50" Margin="10,5" TextChanged="TextBoxChange" KeyDown="TextBoxKeyDown" Background="Gray"/>
         </StackPanel>
     </Grid>
 </Window>

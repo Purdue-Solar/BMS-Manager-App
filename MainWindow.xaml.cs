@@ -27,6 +27,7 @@ using System.ComponentModel;
 using System.Threading;
 using Microsoft.Extensions.Logging;
 using CsvHelper;
+using Windows.ApplicationModel.Contacts;
 
 //Setup Logger
 
@@ -46,12 +47,11 @@ namespace BMSManagerRebuilt
         private string selectedPortName;
         private SerialPort serialPort;
         private int tries = 22;
+        private bool portConnected = false;
 
         //Initializing Logging
         static ILoggerFactory factory = LoggerFactory.Create(builder => builder.AddConsole().AddDebug().SetMinimumLevel(LogLevel.Debug));
         ILogger logger = factory.CreateLogger<MainWindow>();
-
-
 
         public MainWindow()
         {
@@ -61,29 +61,32 @@ namespace BMSManagerRebuilt
             
         private void myButton_Click(object sender, RoutedEventArgs e)
         {
-            
             if ((string)myButton.Content == "Edit")
             {
                 logger.LogDebug("Button clicked");
                 string temp = value;
                 value = processTextBox();
                 logger.LogDebug("{temp} is changed into {value}", temp, value);
-                WritePort(value, tries);
-                myButton_Switch();
+                WriteFromPort(value);
+                changeButtonText(myButton, "Edited");
             }
         }
-        private void myButton_Switch()
+
+        private void changeButtonText(Button myButton, string text)
         {
-            myButton.Content = "Accepted";
+            myButton.Content = text;
         }
+
         private string processTextBox()
         {
             return textBoxTest.Text;
         }
+
         private void TextBoxChange(object sender, TextChangedEventArgs e)
         {
-            myButton.Content = "Edit";
+            changeButtonText(myButton, "Edit");
         }
+
         private void TextBoxKeyDown(object sender, KeyRoutedEventArgs e)
         {
             if (e.Key == (VirtualKey)13)
@@ -92,69 +95,79 @@ namespace BMSManagerRebuilt
                 string temp = value;
                 value = processTextBox();
                 logger.LogDebug("{temp} is changed into {value}", temp, value);
-                WritePort(value, tries);
-                myButton_Switch();
+                WriteFromPort(value);
+                changeButtonText(myButton, "Edited");
             }
         }
+
         private void PortDetect(object sender, RoutedEventArgs e)
         {
             logger.LogDebug("Run Port Detection");
-            if (serialPort != null) {
-                if (serialPort.IsOpen)
-                {
-                    serialPort.Close();
-                }
-            }
-            PortsBox.ItemsSource = null;
-            PortsBox.SelectedIndex = -1;
             portsNames = SerialPort.GetPortNames();
             PortsBox.ItemsSource = portsNames;
         }
+
         private void PortSelect(object sender, SelectionChangedEventArgs e)
         {
-            int tries = 22;
-            logger.LogDebug("{length}", portsNames.Length);
-            if (portsNames.Length > 0)
+            if (portsNames.Length > 0 & !portConnected)
             {
-                if (e.AddedItems != null)
+                changeButtonText(PortDisconnectButton, "Disconnect");
+                if (e.AddedItems[0] != null)
                 { 
                     selectedPortName = e.AddedItems[0].ToString();
-                    serialPort = new SerialPort(selectedPortName, 9600, Parity.None, 8, StopBits.One); 
+                    serialPort = new SerialPort(selectedPortName, 9600, Parity.None, 8, StopBits.One);
+                    //Attempting to connect
+                    PortConnect(serialPort);
+                    portConnected = true;
                 }
-                while (tries > 0)
-                {
-                    try
-                    {
-                        serialPort.Handshake = Handshake.XOnXOff;
-                        if (!serialPort.IsOpen)
-                        {
-                            serialPort.Open();
-                            Thread.Sleep(1);
-                        }
-                        //serialPort.Write(text);
-                        //Console.WriteLine("Port write");
-                        break;
-                    }
-                    catch (UnauthorizedAccessException)
-                    {
-                        tries--;
-                        Thread.Sleep(1);
-                    }
-                }
-                logger.LogDebug("{port} is selected and opened", selectedPortName);
             }
         }
-            
-        //private void AppClose(object sender, CancelEventArgs e)
-        //{
-        //    if (serialPort.IsOpen)
-        //    {
-        //        serialPort.Close();
-        //    }
-        //}
-        private void WritePort(string text, int tries)
-        {   
 
+        private void PortConnect(SerialPort serialPort)
+        {
+            logger.LogDebug("Connecting to {port}", serialPort.PortName);
+            int tries = 22;
+            while (tries > 0)
+            {
+                try
+                {
+                    serialPort.Handshake = Handshake.XOnXOff;
+                    if (!serialPort.IsOpen)
+                    {
+                        serialPort.Open();
+                        Thread.Sleep(1);
+                    }
+                    break;
+                }
+                catch (UnauthorizedAccessException)
+                {
+                    tries--;
+                    Thread.Sleep(1);  
+                }
+            }
+            if (serialPort.IsOpen)
+            {
+                logger.LogDebug("{port} is selected and opened!", serialPort.PortName);
+            }
+        }
+
+        private void DisconnectPort(object sender, RoutedEventArgs e)
+        {
+            if (serialPort != null)
+            {
+                if (serialPort.IsOpen)
+                {
+                    logger.LogDebug("Disconnecting from {port}", serialPort.PortName);
+                    serialPort.Close();
+                    changeButtonText(PortDisconnectButton, "Disconnected");
+                    logger.LogDebug("Disconnected. If you want to connect back to the same port, MUST unplug and plug it in again");
+                }
+            }
+        }
+
+        private void WriteFromPort(string text)
+        {   
+             
         }
         private void ReadFromPort(object sender, SerialDataReceivedEventArgs e)
         {
