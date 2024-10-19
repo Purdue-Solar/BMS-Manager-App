@@ -96,6 +96,7 @@ namespace BMSManagerRebuilt
         }
         private void PortDetect(object sender, RoutedEventArgs e)
         {
+            logger.LogDebug("Run Port Detection");
             if (serialPort.IsOpen)
             {
                 serialPort.Close();
