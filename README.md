@@ -13,3 +13,4 @@ Added Disconnect Button (if disconnected have to replug the port in again becaus
 
 <h3>Future addition</h3> <br\>
 Adding Serial Port Write<br/>
+Added Background Color <br/>
