@@ -14,4 +14,3 @@ Added Background color
 
 <h3>Future addition</h3> <br\>
 Adding Serial Port Write<br/>
-Added Background Color <br/>
