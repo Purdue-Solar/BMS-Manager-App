@@ -10,6 +10,7 @@ Added Serial Port Write(Testing with an Arduino)<br/>
 Added Logging capabilities<br/>
 Fixing Port Selecting Bug where the program crash because it is reading into and empty array<br/>
 Added Disconnect Button (if disconnected have to replug the port in again because can only open port once)<br/>
+Added Background color
 
 <h3>Future addition</h3> <br\>
 Adding Serial Port Write<br/>
