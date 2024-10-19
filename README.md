@@ -11,3 +11,4 @@ Added Serial Port Write(Testing with an Arduino)<br/>
 Added Logging capabilities<br/>
 Fixing Port Selecting Bug where the program crash because it is reading into and empty array<br/>
 Adding Serial Port Write<br/>
+Added Background Color <br/>
