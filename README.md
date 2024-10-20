@@ -5,7 +5,7 @@ Added Serial Port Detection<br/>
 Added GUI<br/>
 Added Buttons and Text Boxes<br/>
 Added Serial Port Switching<br/>
-Added Serial Port Write(Testing with an Arduino)<br/>
+Added Serial Port Write (Testing with an Arduino)<br/>
 <h3>10/19/2024</h3><br/>
 Added Logging capabilities<br/>
 Fixing Port Selecting Bug where the program crash because it is reading into and empty array<br/>
@@ -14,4 +14,3 @@ Added Background color
 
 <h3>Future addition</h3> <br\>
 Adding Serial Port Write<br/>
-Added Background Color <br/>
