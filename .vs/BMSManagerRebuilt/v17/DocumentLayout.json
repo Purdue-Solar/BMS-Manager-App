@@ -50,8 +50,7 @@
               "RelativeToolTip": "MainWindow.xaml",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAABcAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-10-19T18:22:12.821Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-19T18:22:12.821Z"
             },
             {
               "$type": "Document",
@@ -61,7 +60,7 @@
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "D:\\Projects\\App\\BMS-Manager-App\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAJEAAAAAAAAAAAAAAGgAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAAAJ8AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-19T17:26:47.82Z",
               "EditorCaption": ""
@@ -76,8 +75,7 @@
               "RelativeToolTip": "README.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2024-10-19T19:59:41.007Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-19T19:59:41.007Z"
             },
             {
               "$type": "Document",
@@ -89,8 +87,7 @@
               "RelativeToolTip": "obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\MainWindow.g.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T20:08:23.852Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-19T20:08:23.852Z"
             },
             {
               "$type": "Document",
@@ -102,8 +99,7 @@
               "RelativeToolTip": "App.xaml.cs",
               "ViewState": "AgIAABsAAAAAAAAAAAAAACwAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T17:25:37.854Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-19T17:25:37.854Z"
             }
           ]
         }
