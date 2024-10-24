@@ -16,4 +16,5 @@ Added Background color
 Added Json Decoder reference text file<br/>
 
 <h3>Future addition</h3> <br\>
-Adding Serial Port Write<br/>
+Add Serial Port Write<br/>
+Add Json Encoder<br/>
