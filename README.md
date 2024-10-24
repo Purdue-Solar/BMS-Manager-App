@@ -12,5 +12,8 @@ Fixing Port Selecting Bug where the program crash because it is reading into and
 Added Disconnect Button (if disconnected have to replug the port in again because can only open port once)<br/>
 Added Background color
 
+<h3>10/24/2024</h3><br/>
+Added Json Decoder reference text file<br/>
+
 <h3>Future addition</h3> <br\>
 Adding Serial Port Write<br/>
