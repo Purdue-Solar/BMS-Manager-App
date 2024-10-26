@@ -29,13 +29,13 @@
     <AppXManifest Include="D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-10-19T20:29:59.422</Modified>
+      <Modified>2024-10-26T15:49:50.824</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-10-19T20:29:59.115</Modified>
+      <Modified>2024-10-26T15:49:49.961</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\BMSManagerRebuilt.runtimeconfig.json">
       <PackagePath>BMSManagerRebuilt.runtimeconfig.json</PackagePath>
@@ -43,11 +43,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\BMSManagerRebuilt.dll">
       <PackagePath>BMSManagerRebuilt.dll</PackagePath>
-      <Modified>2024-10-19T20:29:58.828</Modified>
+      <Modified>2024-10-26T15:49:48.456</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>BMSManagerRebuilt.exe</PackagePath>
-      <Modified>2024-10-19T20:29:58.951</Modified>
+      <Modified>2024-10-26T15:49:48.772</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Admin\.nuget\packages\microsoft.web.webview2\1.0.2651.64\runtimes\win-x64\native\WebView2Loader.dll">
       <PackagePath>runtimes\win-x64\native\WebView2Loader.dll</PackagePath>

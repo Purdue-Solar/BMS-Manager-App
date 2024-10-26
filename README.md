@@ -15,6 +15,12 @@ Added Background color
 <h3>10/24/2024</h3><br/>
 Added Json Decoder reference text file<br/>
 
+<h3>10/26/2024</h3><br/>
+Added Serial Port Read<br/>
+Added Serial Port Write<br/>
+Testing Serial Function with arduino<br/>
+
 <h3>Future addition</h3> <br\>
 Add Serial Port Write<br/>
-Add Json Encoder<br/>
+Add Json Encoder/Reader<br/>
+Add Json Decoder<br/>

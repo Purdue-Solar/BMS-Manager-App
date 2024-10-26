@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\Projects\\App\\BMS-Manager-App\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A3DD1161-49FC-43AD-B82D-D18810DFE402}|BMSManagerRebuilt.csproj|d:\\projects\\app\\bms-manager-app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{A3DD1161-49FC-43AD-B82D-D18810DFE402}|BMSManagerRebuilt.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A3DD1161-49FC-43AD-B82D-D18810DFE402}|BMSManagerRebuilt.csproj|d:\\projects\\app\\bms-manager-app\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A3DD1161-49FC-43AD-B82D-D18810DFE402}|BMSManagerRebuilt.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3DD1161-49FC-43AD-B82D-D18810DFE402}|BMSManagerRebuilt.csproj|d:\\projects\\app\\bms-manager-app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{A3DD1161-49FC-43AD-B82D-D18810DFE402}|BMSManagerRebuilt.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A3DD1161-49FC-43AD-B82D-D18810DFE402}|BMSManagerRebuilt.csproj|d:\\projects\\app\\bms-manager-app\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,26 +42,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "D:\\Projects\\App\\BMS-Manager-App\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
               "ToolTip": "D:\\Projects\\App\\BMS-Manager-App\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABkAAAC/AAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACIAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-10-19T18:22:12.821Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "D:\\Projects\\App\\BMS-Manager-App\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "D:\\Projects\\App\\BMS-Manager-App\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAAIUAAAAAAAAAAAAAAJsAAABXAAAAAAAAAA==",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAAALQAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-19T17:26:47.82Z",
               "EditorCaption": ""
@@ -74,7 +74,7 @@
               "RelativeDocumentMoniker": "README.md",
               "ToolTip": "D:\\Projects\\App\\BMS-Manager-App\\README.md",
               "RelativeToolTip": "README.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
               "WhenOpened": "2024-10-19T19:59:41.007Z",
               "EditorCaption": ""
@@ -89,8 +89,7 @@
               "RelativeToolTip": "obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\MainWindow.g.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T20:08:23.852Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-19T20:08:23.852Z"
             },
             {
               "$type": "Document",
@@ -102,8 +101,7 @@
               "RelativeToolTip": "App.xaml.cs",
               "ViewState": "AgIAABsAAAAAAAAAAAAAACwAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T17:25:37.854Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-19T17:25:37.854Z"
             }
           ]
         }

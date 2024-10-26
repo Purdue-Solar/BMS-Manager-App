@@ -24,7 +24,6 @@
             
         <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="6" Grid.Row="1">
             <Button CornerRadius="0" BorderBrush="black" BorderThickness="2" Click="DisconnectPort" x:Name="PortDisconnectButton" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Background="Gray">Disconnect</Button>
-            
         </StackPanel>
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="6" Grid.Row="2">
@@ -33,7 +32,7 @@
 
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column ="0">
             <TextBlock Text="Something Something variable" FontSize="12" Foreground="Black"/>
-            <TextBlock Name="SerialDataRead" FontSize="12" Foreground="Black"/>
+            <TextBlock Name="SerialDataRead" Text="Serial Port Data" FontSize="12" Foreground="Black"/>
         </StackPanel>
         <StackPanel VerticalAlignment="Center" Grid.Column ="0">
             <TextBox Height="18" Name="textBoxTest" Width="50" Margin="10,5" TextChanged="TextBoxChange" KeyDown="TextBoxKeyDown" Background="Gray"/>
