@@ -20,7 +20,10 @@ Added Serial Port Read<br/>
 Added Serial Port Write<br/>
 Testing Serial Function with arduino<br/>
 
+<h3>10/29/2024</h3><br/>
+Finish testing serial port read and write (sucessfull)<br/>
+
 <h3>Future addition</h3> <br\>
-Add Serial Port Write<br/>
+Add Window Tab<br/>
 Add Json Encoder/Reader<br/>
 Add Json Decoder<br/>
