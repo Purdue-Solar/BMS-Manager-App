@@ -28,6 +28,8 @@ using System.Threading;
 using Microsoft.Extensions.Logging;
 using CsvHelper;
 using Windows.ApplicationModel.Contacts;
+using TextBoxOperation;
+using ButtonOperation;
 
 //Setup Logger
 
@@ -48,6 +50,7 @@ namespace BMSManagerRebuilt
         private SerialPort serialPort;
         private int tries = 22;
         private bool portConnected = false;
+        private byte[] portBuffer = new byte[16];
 
         //Initializing Logging
         static ILoggerFactory factory = LoggerFactory.Create(builder => builder.AddConsole().AddDebug().SetMinimumLevel(LogLevel.Debug));
@@ -56,7 +59,6 @@ namespace BMSManagerRebuilt
         public MainWindow()
         {
             this.InitializeComponent();
-            
         }
             
         private void myButton_Click(object sender, RoutedEventArgs e)
@@ -67,7 +69,7 @@ namespace BMSManagerRebuilt
                 string temp = value;
                 value = processTextBox();
                 logger.LogDebug("{temp} is changed into {value}", temp, value);
-                WriteFromPort(value);
+                WriteToPort(value);
                 changeButtonText(myButton, "Edited");
             }
         }
@@ -95,7 +97,7 @@ namespace BMSManagerRebuilt
                 string temp = value;
                 value = processTextBox();
                 logger.LogDebug("{temp} is changed into {value}", temp, value);
-                WriteFromPort(value);
+                WriteToPort(value);
                 changeButtonText(myButton, "Edited");
             }
         }
@@ -116,6 +118,8 @@ namespace BMSManagerRebuilt
                 { 
                     selectedPortName = e.AddedItems[0].ToString();
                     serialPort = new SerialPort(selectedPortName, 9600, Parity.None, 8, StopBits.One);
+                    serialPort.RtsEnable = true;
+                    serialPort.DataReceived += new SerialDataReceivedEventHandler(ReadFromPort);
                     //Attempting to connect
                     PortConnect(serialPort);
                     portConnected = true;
@@ -147,6 +151,7 @@ namespace BMSManagerRebuilt
             }
             if (serialPort.IsOpen)
             {
+                PortStatusText.Text = "Port Status: Connected";
                 logger.LogDebug("{port} is selected and opened!", serialPort.PortName);
             }
         }
@@ -165,15 +170,27 @@ namespace BMSManagerRebuilt
             }
         }
 
-        private void WriteFromPort(string text)
-        {   
-             
+        private void WriteToPort(string text)
+        {
+            logger.LogDebug("Writing Data: {text}", text);
+             if (serialPort.IsOpen)
+            {
+                serialPort.WriteLine(text);
+                logger.LogDebug("Data Written: {text}", text);
+            }
         }
+
+        //Read 1 byte from Port
         private void ReadFromPort(object sender, SerialDataReceivedEventArgs e)
         {
-
+            logger.LogDebug("Intercepting Data");
+            if (serialPort.IsOpen)
+            {
+                serialPort.Read(portBuffer, 0, 1);
+                logger.LogDebug("Data read: {data}", portBuffer[0]);
+                logger.LogDebug("Data Intercepted");
+            }
         }
-
         //End Line
     }  
 }

@@ -19,12 +19,11 @@
         <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="5" Grid.Row="1">
             <Button x:ConnectionId='6' CornerRadius="0" BorderBrush="black" BorderThickness="2" x:Name="PortDetectButton" Background="Gray"                    HorizontalAlignment="Left" Width="90">Detect</Button>
             <ComboBox x:ConnectionId='7' x:Name="PortsBox" Background="Gray" PlaceholderText="Pick a Ports" Width="200"                                                                />
-            <TextBlock Text="Port Status: " FontSize="13" Foreground="Black"/>
+            <TextBlock x:ConnectionId='8' x:Name="PortStatusText" Text="Port Status: Disconnected" HorizontalAlignment="Right" FontSize="13" Foreground="Black"/>
         </StackPanel>
             
         <StackPanel HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Column="6" Grid.Row="1">
             <Button x:ConnectionId='5' CornerRadius="0" BorderBrush="black" BorderThickness="2"                        x:Name="PortDisconnectButton" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Background="Gray">Disconnect</Button>
-            
         </StackPanel>
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="6" Grid.Row="2">
@@ -33,7 +32,7 @@
 
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column ="0">
             <TextBlock Text="Something Something variable" FontSize="12" Foreground="Black"/>
-            <TextBlock x:ConnectionId='3' Name="SerialDataRead" FontSize="12" Foreground="Black"/>
+            <TextBlock x:ConnectionId='3' Name="SerialDataRead" Text="Serial Port Data" FontSize="12" Foreground="Black"/>
         </StackPanel>
         <StackPanel VerticalAlignment="Center" Grid.Column ="0">
             <TextBox x:ConnectionId='2' Height="18" Name="textBoxTest" Width="50" Margin="10,5"                                                      Background="Gray"/>
