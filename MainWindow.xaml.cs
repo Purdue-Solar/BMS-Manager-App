@@ -12,7 +12,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.IO.Ports;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Microsoft.UI.Input;
@@ -28,6 +27,8 @@ using System.Threading;
 using Microsoft.Extensions.Logging;
 using CsvHelper;
 using Windows.ApplicationModel.Contacts;
+using System.Runtime.InteropServices;
+using PSR;
 using TextBoxOperation;
 using ButtonOperation;
 
@@ -51,6 +52,8 @@ namespace BMSManagerRebuilt
         private int tries = 22;
         private bool portConnected = false;
         private byte[] portBuffer = new byte[16];
+        private SerialDataStruct incomingData;
+        private SerialDataStruct outcomingData;
 
         //Initializing Logging
         static ILoggerFactory factory = LoggerFactory.Create(builder => builder.AddConsole().AddDebug().SetMinimumLevel(LogLevel.Debug));
