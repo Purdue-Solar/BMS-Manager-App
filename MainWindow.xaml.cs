@@ -28,7 +28,7 @@ using Microsoft.Extensions.Logging;
 using CsvHelper;
 using Windows.ApplicationModel.Contacts;
 using System.Runtime.InteropServices;
-using PSR;
+using BMSDataStruct;
 using TextBoxOperation;
 using ButtonOperation;
 
@@ -52,10 +52,12 @@ namespace BMSManagerRebuilt
         private int tries = 22;
         private bool portConnected = false;
         private byte[] portBuffer = new byte[16];
-        private SerialDataStruct incomingData;
-        private SerialDataStruct outcomingData;
+        private SerialStruct incomingData;
+        private SerialStruct outcomingData;
 
-        //Initializing Logging
+        /// <summary>
+        /// Debug Logger operation
+        /// </summary>
         static ILoggerFactory factory = LoggerFactory.Create(builder => builder.AddConsole().AddDebug().SetMinimumLevel(LogLevel.Debug));
         ILogger logger = factory.CreateLogger<MainWindow>();
 
@@ -63,7 +65,9 @@ namespace BMSManagerRebuilt
         {
             this.InitializeComponent();
         }
-            
+        
+
+        //Button Operation
         private void myButton_Click(object sender, RoutedEventArgs e)
         {
             if ((string)myButton.Content == "Edit")
@@ -105,6 +109,8 @@ namespace BMSManagerRebuilt
             }
         }
 
+
+        //Port operation
         private void PortDetect(object sender, RoutedEventArgs e)
         {
             logger.LogDebug("Run Port Detection");
@@ -154,7 +160,7 @@ namespace BMSManagerRebuilt
             }
             if (serialPort.IsOpen)
             {
-                PortStatusText.Text = "Port Status: Connected";
+                PortStatusText.Text = "Port Status:    Connected"; //Spacing to match "Port Status: Disconnected"
                 logger.LogDebug("{port} is selected and opened!", serialPort.PortName);
             }
         }
@@ -168,6 +174,9 @@ namespace BMSManagerRebuilt
                     logger.LogDebug("Disconnecting from {port}", serialPort.PortName);
                     serialPort.Close();
                     changeButtonText(PortDisconnectButton, "Disconnected");
+                    PortStatusText.Text = "Port Status: Disconnected";
+                    errorWindows DisconnectWindow = new errorWindows();
+                    DisconnectWindow.Activate();
                     logger.LogDebug("Disconnected. If you want to connect back to the same port, MUST unplug and plug it in again");
                 }
             }

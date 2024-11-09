@@ -26,6 +26,9 @@ Finish testing serial port read and write (sucessfull)<br/>
 <h3>11/02/2024</h3><br/>
 Added serial data structure definition (unfinished)<br/>
 
+<h3>11/09/2024</h3><br/>
+Added Warning windows<br/>
+
 <h3>Future addition</h3> <br\>
 Add Window Tab<br/>
 Add Json Encoder/Reader<br/>

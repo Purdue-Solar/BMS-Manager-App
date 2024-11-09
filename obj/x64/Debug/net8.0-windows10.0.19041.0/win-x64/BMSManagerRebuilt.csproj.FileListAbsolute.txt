@@ -271,3 +271,11 @@ D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64
 D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\qualifiers.txt.intermediate
 D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\MultipleQualifiersPerDimensionFound.txt
 D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\ProjectArchitectures.txt
+D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\errorWindows.g.i.cs
+D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\errorWindows.g.cs
+D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\errorWindows.xaml
+D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net8.0-windows10.0.19041.0\win-x64\errorWindows.xbf
+D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\errorWindows.xbf
+D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\ScottPlot.dll
+D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\SkiaSharp.dll
+D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net8.0-windows10.0.19041.0\win-x64\libSkiaSharp.dll

@@ -14,8 +14,9 @@
           "Microsoft.Extensions.Logging.Console": "8.0.1",
           "Microsoft.Extensions.Logging.Debug": "8.0.1",
           "Microsoft.Windows.SDK.BuildTools": "10.0.26100.1742",
-          "Microsoft.WindowsAppSDK": "1.6.240829007",
+          "Microsoft.WindowsAppSDK": "1.6.240923002",
           "PInvoke.User32": "0.7.124",
+          "ScottPlot": "5.0.43",
           "System.IO.Ports": "8.0.0",
           "System.Threading.Tasks": "4.3.0",
           "System.Windows.Extensions": "8.0.0",
@@ -935,7 +936,7 @@
         }
       },
       "Microsoft.Windows.SDK.BuildTools/10.0.26100.1742": {},
-      "Microsoft.WindowsAppSDK/1.6.240829007": {
+      "Microsoft.WindowsAppSDK/1.6.240923002": {
         "dependencies": {
           "Microsoft.Web.WebView2": "1.0.2651.64",
           "Microsoft.Windows.SDK.BuildTools": "10.0.26100.1742"
@@ -943,11 +944,11 @@
         "runtime": {
           "lib/net6.0-windows10.0.18362.0/Microsoft.InteractiveExperiences.Projection.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.26107.1010"
+            "fileVersion": "10.0.26107.1011"
           },
           "lib/net6.0-windows10.0.18362.0/Microsoft.WinUI.dll": {
             "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.0.2408"
+            "fileVersion": "3.0.0.2409"
           },
           "lib/net6.0-windows10.0.18362.0/Microsoft.Windows.AppLifecycle.Projection.dll": {
             "assemblyVersion": "1.6.0.0",
@@ -1080,6 +1081,43 @@
       },
       "runtime.osx-arm64.runtime.native.System.IO.Ports/8.0.0": {},
       "runtime.osx-x64.runtime.native.System.IO.Ports/8.0.0": {},
+      "ScottPlot/5.0.43": {
+        "dependencies": {
+          "SkiaSharp": "2.88.8",
+          "SkiaSharp.NativeAssets.Linux.NoDependencies": "2.88.8"
+        },
+        "runtime": {
+          "lib/net8.0/ScottPlot.dll": {
+            "assemblyVersion": "5.0.43.0",
+            "fileVersion": "5.0.43.0"
+          }
+        }
+      },
+      "SkiaSharp/2.88.8": {
+        "dependencies": {
+          "SkiaSharp.NativeAssets.Win32": "2.88.8",
+          "SkiaSharp.NativeAssets.macOS": "2.88.8"
+        },
+        "runtime": {
+          "lib/net6.0/SkiaSharp.dll": {
+            "assemblyVersion": "2.88.0.0",
+            "fileVersion": "2.88.8.0"
+          }
+        }
+      },
+      "SkiaSharp.NativeAssets.Linux.NoDependencies/2.88.8": {
+        "dependencies": {
+          "SkiaSharp": "2.88.8"
+        }
+      },
+      "SkiaSharp.NativeAssets.macOS/2.88.8": {},
+      "SkiaSharp.NativeAssets.Win32/2.88.8": {
+        "native": {
+          "runtimes/win-x64/native/libSkiaSharp.dll": {
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
       "System.IO.Ports/8.0.0": {
         "dependencies": {
           "runtime.native.System.IO.Ports": "8.0.0"
@@ -1282,12 +1320,12 @@
       "path": "microsoft.windows.sdk.buildtools/10.0.26100.1742",
       "hashPath": "microsoft.windows.sdk.buildtools.10.0.26100.1742.nupkg.sha512"
     },
-    "Microsoft.WindowsAppSDK/1.6.240829007": {
+    "Microsoft.WindowsAppSDK/1.6.240923002": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Ij0jXARFOlRY+n7M32ZS9Kbf+x7gmnhWVnMP3eKHe83eu/2pzh9f4gjmoZ5fAgoZaKWCa2PvcxzHx0gtRXcKRQ==",
-      "path": "microsoft.windowsappsdk/1.6.240829007",
-      "hashPath": "microsoft.windowsappsdk.1.6.240829007.nupkg.sha512"
+      "sha512": "sha512-7PfOz2scXU+AAM/GYge+f6s7k3DVI+R1P8MNPZQr56GOPCGw+csvcg3S5KZg47z/o04kNvWH3GKtWT1ML9tpZw==",
+      "path": "microsoft.windowsappsdk/1.6.240923002",
+      "hashPath": "microsoft.windowsappsdk.1.6.240923002.nupkg.sha512"
     },
     "PInvoke.Kernel32/0.7.124": {
       "type": "package",
@@ -1372,6 +1410,41 @@
       "sha512": "sha512-IcfB4jKtM9pkzP9OpYelEcUX1MiDt0IJPBh3XYYdEISFF+6Mc+T8WWi0dr9wVh1gtcdVjubVEIBgB8BHESlGfQ==",
       "path": "runtime.osx-x64.runtime.native.system.io.ports/8.0.0",
       "hashPath": "runtime.osx-x64.runtime.native.system.io.ports.8.0.0.nupkg.sha512"
+    },
+    "ScottPlot/5.0.43": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-H8R9FP7EPErQugV/NG0WcKa2Y1xrYiV+R5zww76WeRyyMccdVe3Ij8Psa8AIGzcg4rm4b0PZobtzlgma/YAwMA==",
+      "path": "scottplot/5.0.43",
+      "hashPath": "scottplot.5.0.43.nupkg.sha512"
+    },
+    "SkiaSharp/2.88.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bRkp3uKp5ZI8gXYQT57uKwil1uobb2p8c69n7v5evlB/2JNcMAXVcw9DZAP5Ig3WSvgzGm2YSn27UVeOi05NlA==",
+      "path": "skiasharp/2.88.8",
+      "hashPath": "skiasharp.2.88.8.nupkg.sha512"
+    },
+    "SkiaSharp.NativeAssets.Linux.NoDependencies/2.88.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/DoKtdyvRgCC5GR/SH+ps3ZiOjmf0BYpAyrhWQELFOO1hdcqddrDVJjDNCOJ41vV+NlS5b3kcDoZZ7jLhFjyXg==",
+      "path": "skiasharp.nativeassets.linux.nodependencies/2.88.8",
+      "hashPath": "skiasharp.nativeassets.linux.nodependencies.2.88.8.nupkg.sha512"
+    },
+    "SkiaSharp.NativeAssets.macOS/2.88.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6Kn5TSkKlfyS6azWHF3Jk2sW5C4jCE5uSshM/5AbfFrR+5n6qM5XEnz9h4VaVl7LTxBvHvMkuPb/3bpbq0vxTw==",
+      "path": "skiasharp.nativeassets.macos/2.88.8",
+      "hashPath": "skiasharp.nativeassets.macos.2.88.8.nupkg.sha512"
+    },
+    "SkiaSharp.NativeAssets.Win32/2.88.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-O9QXoWEXA+6cweR4h3BOnwMz+pO9vL9mXdjLrpDd0w1QzCgWmLQBxa1VgySDITiH7nQndrDG1h6937zm9pLj1Q==",
+      "path": "skiasharp.nativeassets.win32/2.88.8",
+      "hashPath": "skiasharp.nativeassets.win32.2.88.8.nupkg.sha512"
     },
     "System.IO.Ports/8.0.0": {
       "type": "package",

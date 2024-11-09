@@ -72,11 +72,15 @@
             },
             "Microsoft.WindowsAppSDK": {
               "target": "Package",
-              "version": "[1.6.240829007, )"
+              "version": "[1.6.240923002, )"
             },
             "PInvoke.User32": {
               "target": "Package",
               "version": "[0.7.124, )"
+            },
+            "ScottPlot": {
+              "target": "Package",
+              "version": "[5.0.43, )"
             },
             "System.IO.Ports": {
               "target": "Package",

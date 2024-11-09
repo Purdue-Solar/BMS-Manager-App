@@ -3,28 +3,32 @@
   "WorkspaceRootPath": "D:\\Projects\\App\\BMS-Manager-App\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A3DD1161-49FC-43AD-B82D-D18810DFE402}|BMSManagerRebuilt.csproj|d:\\projects\\app\\bms-manager-app\\buttonoperation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A3DD1161-49FC-43AD-B82D-D18810DFE402}|BMSManagerRebuilt.csproj|solutionrelative:buttonoperation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A3DD1161-49FC-43AD-B82D-D18810DFE402}|BMSManagerRebuilt.csproj|d:\\projects\\app\\bms-manager-app\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A3DD1161-49FC-43AD-B82D-D18810DFE402}|BMSManagerRebuilt.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3DD1161-49FC-43AD-B82D-D18810DFE402}|BMSManagerRebuilt.csproj|d:\\projects\\app\\bms-manager-app\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{A3DD1161-49FC-43AD-B82D-D18810DFE402}|BMSManagerRebuilt.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A3DD1161-49FC-43AD-B82D-D18810DFE402}|BMSManagerRebuilt.csproj|d:\\projects\\app\\bms-manager-app\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{A3DD1161-49FC-43AD-B82D-D18810DFE402}|BMSManagerRebuilt.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A3DD1161-49FC-43AD-B82D-D18810DFE402}|BMSManagerRebuilt.csproj|d:\\projects\\app\\bms-manager-app\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A3DD1161-49FC-43AD-B82D-D18810DFE402}|BMSManagerRebuilt.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A3DD1161-49FC-43AD-B82D-D18810DFE402}|BMSManagerRebuilt.csproj|d:\\projects\\app\\bms-manager-app\\errorwindows.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3DD1161-49FC-43AD-B82D-D18810DFE402}|BMSManagerRebuilt.csproj|solutionrelative:errorwindows.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Projects\\App\\BMS-Manager-App\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\MainWindow.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\MainWindow.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A3DD1161-49FC-43AD-B82D-D18810DFE402}|BMSManagerRebuilt.csproj|d:\\projects\\app\\bms-manager-app\\serialdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3DD1161-49FC-43AD-B82D-D18810DFE402}|BMSManagerRebuilt.csproj|solutionrelative:serialdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3DD1161-49FC-43AD-B82D-D18810DFE402}|BMSManagerRebuilt.csproj|d:\\projects\\app\\bms-manager-app\\iconfigentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3DD1161-49FC-43AD-B82D-D18810DFE402}|BMSManagerRebuilt.csproj|solutionrelative:iconfigentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3DD1161-49FC-43AD-B82D-D18810DFE402}|BMSManagerRebuilt.csproj|d:\\projects\\app\\bms-manager-app\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "RelativeMoniker": "D:0:0:{A3DD1161-49FC-43AD-B82D-D18810DFE402}|BMSManagerRebuilt.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3DD1161-49FC-43AD-B82D-D18810DFE402}|BMSManagerRebuilt.csproj|d:\\projects\\app\\bms-manager-app\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3DD1161-49FC-43AD-B82D-D18810DFE402}|BMSManagerRebuilt.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,8 +38,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 7,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IConfigEntry.cs",
+              "DocumentMoniker": "D:\\Projects\\App\\BMS-Manager-App\\IConfigEntry.cs",
+              "RelativeDocumentMoniker": "IConfigEntry.cs",
+              "ToolTip": "D:\\Projects\\App\\BMS-Manager-App\\IConfigEntry.cs",
+              "RelativeToolTip": "IConfigEntry.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-09T17:35:57.302Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SerialData.cs",
+              "DocumentMoniker": "D:\\Projects\\App\\BMS-Manager-App\\SerialData.cs",
+              "RelativeDocumentMoniker": "SerialData.cs",
+              "ToolTip": "D:\\Projects\\App\\BMS-Manager-App\\SerialData.cs",
+              "RelativeToolTip": "SerialData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-09T17:17:31.115Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
@@ -46,79 +76,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ButtonOperation.cs",
-              "DocumentMoniker": "D:\\Projects\\App\\BMS-Manager-App\\ButtonOperation.cs",
-              "RelativeDocumentMoniker": "ButtonOperation.cs",
-              "ToolTip": "D:\\Projects\\App\\BMS-Manager-App\\ButtonOperation.cs",
-              "RelativeToolTip": "ButtonOperation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "errorWindows.xaml.cs",
+              "DocumentMoniker": "D:\\Projects\\App\\BMS-Manager-App\\errorWindows.xaml.cs",
+              "RelativeDocumentMoniker": "errorWindows.xaml.cs",
+              "ToolTip": "D:\\Projects\\App\\BMS-Manager-App\\errorWindows.xaml.cs",
+              "RelativeToolTip": "errorWindows.xaml.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-02T15:40:36.443Z",
+              "WhenOpened": "2024-11-09T17:18:04.153Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "D:\\Projects\\App\\BMS-Manager-App\\App.xaml.cs",
+              "RelativeDocumentMoniker": "App.xaml.cs",
+              "ToolTip": "D:\\Projects\\App\\BMS-Manager-App\\App.xaml.cs",
+              "RelativeToolTip": "App.xaml.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-09T16:48:08.055Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "D:\\Projects\\App\\BMS-Manager-App\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "D:\\Projects\\App\\BMS-Manager-App\\MainWindow.xaml.cs",
-              "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAawB4AAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T17:26:47.82Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "D:\\Projects\\App\\BMS-Manager-App\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
               "ToolTip": "D:\\Projects\\App\\BMS-Manager-App\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABOAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-10-19T18:22:12.821Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "README.md",
-              "DocumentMoniker": "D:\\Projects\\App\\BMS-Manager-App\\README.md",
-              "RelativeDocumentMoniker": "README.md",
-              "ToolTip": "D:\\Projects\\App\\BMS-Manager-App\\README.md",
-              "RelativeToolTip": "README.md",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2024-10-19T19:59:41.007Z",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Projects\\App\\BMS-Manager-App\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "D:\\Projects\\App\\BMS-Manager-App\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-19T17:26:47.82Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "MainWindow.g.cs",
-              "DocumentMoniker": "D:\\Projects\\App\\BMS-Manager-App\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\MainWindow.g.cs",
-              "RelativeDocumentMoniker": "obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\MainWindow.g.cs",
-              "ToolTip": "D:\\Projects\\App\\BMS-Manager-App\\obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\MainWindow.g.cs",
-              "RelativeToolTip": "obj\\x64\\Debug\\net8.0-windows10.0.19041.0\\win-x64\\MainWindow.g.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T20:08:23.852Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "D:\\Projects\\App\\BMS-Manager-App\\App.xaml.cs",
-              "RelativeDocumentMoniker": "App.xaml.cs",
-              "ToolTip": "D:\\Projects\\App\\BMS-Manager-App\\App.xaml.cs",
-              "RelativeToolTip": "App.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-19T17:25:37.854Z",
+              "Title": "README.md",
+              "DocumentMoniker": "D:\\Projects\\App\\BMS-Manager-App\\README.md",
+              "RelativeDocumentMoniker": "README.md",
+              "ToolTip": "D:\\Projects\\App\\BMS-Manager-App\\README.md",
+              "RelativeToolTip": "README.md",
+              "ViewState": "AgIAABEAAAAAAAAAAAAIwCEAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2024-10-19T19:59:41.007Z",
               "EditorCaption": ""
             }
           ]

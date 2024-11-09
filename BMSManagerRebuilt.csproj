@@ -13,6 +13,9 @@
     <EnableMsixTooling>true</EnableMsixTooling>
 	<WindowsSdkPackageVersion>10.0.19041.38</WindowsSdkPackageVersion>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="errorWindows.xaml" />
+  </ItemGroup>
 
   <ItemGroup>
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -30,8 +33,9 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="8.0.1" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1742" />
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.240829007" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.240923002" />
     <PackageReference Include="PInvoke.User32" Version="0.7.124" />
+    <PackageReference Include="ScottPlot" Version="5.0.43" />
     <PackageReference Include="System.IO.Ports" Version="8.0.0" />
     <PackageReference Include="System.Threading.Tasks" Version="4.3.0" />
     <PackageReference Include="System.Windows.Extensions" Version="8.0.0" />
@@ -45,6 +49,11 @@
   -->
   <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
     <ProjectCapability Include="Msix" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="errorWindows.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <!--

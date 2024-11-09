@@ -14,7 +14,7 @@ namespace BMSManagerRebuilt
         global::Microsoft.UI.Xaml.Window, 
         global::Microsoft.UI.Xaml.Markup.IComponentConnector
     {
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2408")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2409")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private static class XamlBindingSetters
         {
@@ -28,7 +28,7 @@ namespace BMSManagerRebuilt
             }
         };
 
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2408")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2409")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private partial class MainWindow_obj1_Bindings :
             global::Microsoft.UI.Xaml.Markup.IDataTemplateComponent,
@@ -72,7 +72,7 @@ namespace BMSManagerRebuilt
                         break;
                 }
             }
-                        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2408")]
+                        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2409")]
                         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
                         public global::Microsoft.UI.Xaml.Markup.IComponentConnector GetBindingConnector(int connectionId, object target) 
                         {
@@ -163,7 +163,7 @@ namespace BMSManagerRebuilt
         /// <summary>
         /// Connect()
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2408")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2409")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public void Connect(int connectionId, object target)
         {
@@ -220,7 +220,7 @@ namespace BMSManagerRebuilt
         /// <summary>
         /// GetBindingConnector(int connectionId, object target)
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2408")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2409")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public global::Microsoft.UI.Xaml.Markup.IComponentConnector GetBindingConnector(int connectionId, object target)
         {

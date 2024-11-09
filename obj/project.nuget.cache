@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "jA77/oIAyto=",
+  "dgSpecHash": "k7Q8FUUwvaw=",
   "success": true,
   "projectFilePath": "D:\\Projects\\App\\BMS-Manager-App\\BMSManagerRebuilt.csproj",
   "expectedPackageFiles": [
@@ -22,7 +22,7 @@
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.web.webview2\\1.0.2651.64\\microsoft.web.webview2.1.0.2651.64.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.26100.1742\\microsoft.windows.sdk.buildtools.10.0.26100.1742.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.240829007\\microsoft.windowsappsdk.1.6.240829007.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.240923002\\microsoft.windowsappsdk.1.6.240923002.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\pinvoke.kernel32\\0.7.124\\pinvoke.kernel32.0.7.124.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\pinvoke.user32\\0.7.124\\pinvoke.user32.0.7.124.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\pinvoke.windows.core\\0.7.124\\pinvoke.windows.core.0.7.124.nupkg.sha512",
@@ -35,6 +35,11 @@
     "C:\\Users\\Admin\\.nuget\\packages\\runtime.native.system.io.ports\\8.0.0\\runtime.native.system.io.ports.8.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\runtime.osx-arm64.runtime.native.system.io.ports\\8.0.0\\runtime.osx-arm64.runtime.native.system.io.ports.8.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\runtime.osx-x64.runtime.native.system.io.ports\\8.0.0\\runtime.osx-x64.runtime.native.system.io.ports.8.0.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\scottplot\\5.0.43\\scottplot.5.0.43.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\skiasharp\\2.88.8\\skiasharp.2.88.8.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\skiasharp.nativeassets.linux.nodependencies\\2.88.8\\skiasharp.nativeassets.linux.nodependencies.2.88.8.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\skiasharp.nativeassets.macos\\2.88.8\\skiasharp.nativeassets.macos.2.88.8.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\skiasharp.nativeassets.win32\\2.88.8\\skiasharp.nativeassets.win32.2.88.8.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.io.ports\\8.0.0\\system.io.ports.8.0.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\system.private.uri\\4.3.0\\system.private.uri.4.3.0.nupkg.sha512",
