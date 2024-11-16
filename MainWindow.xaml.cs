@@ -29,8 +29,6 @@ using CsvHelper;
 using Windows.ApplicationModel.Contacts;
 using System.Runtime.InteropServices;
 using BMSDataStruct;
-using TextBoxOperation;
-using ButtonOperation;
 
 //Setup Logger
 

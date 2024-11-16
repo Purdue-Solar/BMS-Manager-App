@@ -5,6 +5,7 @@ using System;
 using System.Buffers.Binary;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using Windows.Media.Capture;
 
 
 namespace BMSDataStruct
@@ -138,14 +139,14 @@ namespace BMSDataStruct
 		}
 	};
 
-	struct CurrentWarningLimits(float maxChargingWarning, float maxChargingTemperatureWarning, float maxDischargingWarning, float maxDischargingTemperatureWarning) : IConfigEntry<CurrentWarningLimits>
+	public struct CurrentWarningLimits(float maxChargingWarning, float maxChargingTemperatureWarning, float maxDischargingWarning, float maxDischargingTemperatureWarning) : IConfigEntry<CurrentWarningLimits>
 	{
 		float MaxChargingWarning { get; set; } = maxChargingWarning;
 		float MaxChargingTemperatureWarning { get; set; } = maxChargingTemperatureWarning;
 		float MaxDischargingWarning { get; set; } = maxDischargingWarning;
 		float MaxDischargingTemperatureWarning { get; set; } = maxDischargingTemperatureWarning;
 
-		public static int Size = 4 * sizeof(float);
+		public static int Size => 4 * sizeof(float);
 
         public bool TryWrite(Span<byte> buffer, out int written)
         {
@@ -182,7 +183,7 @@ namespace BMSDataStruct
         }
     };
 
-	struct VoltageLimits(float maxCellVoltage, float minCellVoltage, float maxCellVoltageCharging, float maxPackVoltage, float minPackVoltage, float maxPackVoltageCharging) : IConfigEntry<VoltageLimits>
+	public struct VoltageLimits(float maxCellVoltage, float minCellVoltage, float maxCellVoltageCharging, float maxPackVoltage, float minPackVoltage, float maxPackVoltageCharging) : IConfigEntry<VoltageLimits>
 	{
 		float MaxCellVoltage { get; set; } = maxCellVoltage;
 		float MinCellVoltage { get; set; } = minCellVoltage;
@@ -192,7 +193,7 @@ namespace BMSDataStruct
 		float MinPackVoltage { get; set; } = minPackVoltage;
 		float MaxPackVoltageCharging { get; set; } = maxPackVoltageCharging;
 
-		public static int Size = 6 * sizeof(float);
+		public static int Size => 6 * sizeof(float);
 
         public bool TryWrite(Span<byte> buffer, out int written)
         {
@@ -233,24 +234,102 @@ namespace BMSDataStruct
         }
     };
 
-	struct VoltageWarningLimits
-	{
-		float MaxCellWarning;
-		float MinCellWarning;
-		float MaxCellWarningCharging;
+	public struct VoltageWarningLimits (float maxCellWarning, float minCellWarning, float maxCellWarningCharging, float maxPackWarning, float minPackWarning, float maxPackWarningCharging) : IConfigEntry<VoltageWarningLimits>
+    {
+		float MaxCellWarning { get; set; } = maxCellWarning;
+		float MinCellWarning { get; set; } = minCellWarning;
+		float MaxCellWarningCharging { get; set; } = maxCellWarningCharging;
 
-		float MaxPackWarning;
-		float MinPackWarning;
-		float MaxPackWarningCharging;
-	};
+		float MaxPackWarning { get; set; } = maxPackWarning;
+		float MinPackWarning { get; set; } = minPackWarning;
+		float MaxPackWarningCharging { get; set; } = maxPackWarningCharging;
 
-	struct Contactor
+		public static int Size => 6 * sizeof(float);
+
+        public bool TryWrite(Span<byte> buffer, out int written)
+        {
+            if (buffer.Length < Size)
+            {
+                written = 0;
+                return false;
+            }
+
+            BinaryPrimitives.WriteSingleLittleEndian(buffer, MaxCellWarning);
+            BinaryPrimitives.WriteSingleLittleEndian(buffer.Slice(sizeof(float)), MinCellWarning);
+            BinaryPrimitives.WriteSingleLittleEndian(buffer.Slice(2 * sizeof(float)), MaxCellWarningCharging);
+            BinaryPrimitives.WriteSingleLittleEndian(buffer.Slice(3 * sizeof(float)), MaxPackWarning);
+            BinaryPrimitives.WriteSingleLittleEndian(buffer.Slice(4 * sizeof(float)), MinPackWarning);
+            BinaryPrimitives.WriteSingleLittleEndian(buffer.Slice(5 * sizeof(float)), MaxPackWarningCharging);
+
+            written = Size;
+            return true;
+        }
+
+        public static bool TryRead(ReadOnlySpan<byte> buffer, out VoltageWarningLimits value)
+        {
+            if (buffer.Length < Size)
+            {
+                value = default;
+                return false;
+            }
+
+            float maxCellWarning = BinaryPrimitives.ReadSingleLittleEndian(buffer);
+            float minCellWarning = BinaryPrimitives.ReadSingleLittleEndian(buffer.Slice(sizeof(float)));
+            float maxCellWarningCharging = BinaryPrimitives.ReadSingleLittleEndian(buffer.Slice(2 * sizeof(float)));
+            float maxPackWarning = BinaryPrimitives.ReadSingleLittleEndian(buffer.Slice(3 * sizeof(float)));
+            float minPackWarning = BinaryPrimitives.ReadSingleLittleEndian(buffer.Slice(4 * sizeof(float)));
+            float maxPackWarningCharging = BinaryPrimitives.ReadSingleLittleEndian(buffer.Slice(5 * sizeof(float)));
+
+            value = new VoltageWarningLimits(maxCellWarning, minCellWarning, maxCellWarningCharging, maxPackWarning, minPackWarning, maxPackWarningCharging);
+            return true;
+        }
+    };
+
+	public struct Contactor(bool enabled, uint holdDelaysMS, float holdDutyCycle, float pullInDutyCycle) : IConfigEntry<Contactor>
 	{
-		bool Enabled;
-		uint HoldDelayMs;
-		float HoldDutyCycle;
-		float PullInDutyCycle;
-	};
+		bool Enabled { get; set; } = enabled;
+		uint HoldDelayMs { get; set; } = holdDelaysMS;
+		float HoldDutyCycle { get; set; } = holdDutyCycle;
+		float PullInDutyCycle { get; set; } = pullInDutyCycle;
+
+		public static int Size => sizeof(bool) + sizeof(uint) + sizeof(float) * 2;
+
+        public bool TryWrite(Span<byte> buffer, out int written)
+        {
+            if (buffer.Length < Size)
+            {
+                written = 0;
+                return false;
+            }
+
+			Span<byte> enableByteSpan = BitConverter.GetBytes(Enabled);     //Convert enable to byte span
+            enableByteSpan.CopyTo(buffer.Slice(0, sizeof(bool)));           //Copy enableByteSpan to first part of the buffer
+            BinaryPrimitives.WriteUInt32LittleEndian(buffer.Slice(sizeof(bool)), HoldDelayMs);
+            BinaryPrimitives.WriteSingleLittleEndian(buffer.Slice(sizeof(bool) + sizeof(uint)), HoldDutyCycle);
+            BinaryPrimitives.WriteSingleLittleEndian(buffer.Slice(sizeof(bool) + sizeof(uint) + sizeof(float)), PullInDutyCycle);
+
+
+            written = Size;
+            return true;
+        }
+
+        public static bool TryRead(ReadOnlySpan<byte> buffer, out Contactor value)
+        {
+            if (buffer.Length < Size)
+            {
+                value = default;
+                return false;
+            }
+
+            bool enabled = BitConverter.ToBoolean(buffer.Slice(0, sizeof(bool)));
+            uint holdDelaysMS = BinaryPrimitives.ReadUInt32LittleEndian(buffer.Slice(sizeof(bool)));
+            float holdDutyCycle = BinaryPrimitives.ReadSingleLittleEndian(buffer.Slice(sizeof(bool) + sizeof(uint)));
+            float pullInDutyCycle = BinaryPrimitives.ReadSingleLittleEndian(buffer.Slice(sizeof(bool) + sizeof(uint) + sizeof(float)));
+
+            value = new Contactor(enabled, holdDelaysMS, holdDutyCycle, pullInDutyCycle);
+            return true;
+        }
+    };
 
 	struct ContactorConfiguration
 	{
