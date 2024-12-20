@@ -1,6 +1,8 @@
 ﻿using BMSCharacterization;
+using BMSDataStruct;
 using BMSManagerRebuilt;
 using Microsoft.Extensions.Configuration;
+using Microsoft.UI.Input;
 using System;
 using System.Buffers.Binary;
 using System.Runtime.CompilerServices;
@@ -64,7 +66,7 @@ namespace BMSDataStruct
 		public byte Parallel { get; set; } = parallel;
 		public byte Series { get; set; } = series;
 
-		public static int Size => 2;
+		public int Size => 2;
 
 		public bool TryWrite(Span<byte> buffer, out int written)
 		{
@@ -81,7 +83,7 @@ namespace BMSDataStruct
 			return true;
 		}
 
-		public static bool TryRead(ReadOnlySpan<byte> buffer, out ParallelSeries value)
+		public bool TryRead(ReadOnlySpan<byte> buffer, out ParallelSeries value)
 		{
 			if (buffer.Length < Size)
 			{
@@ -102,7 +104,7 @@ namespace BMSDataStruct
 		public float MaxDischarging { get; set; } = maxDischarge;
 		public float MaxDischargingTemperature { get; set; } = maxDischargeTemp;
 
-		public static int Size => 4 * sizeof(float);
+		public int Size => 4 * sizeof(float);
 
 		public bool TryWrite(Span<byte> buffer, out int written)
 		{
@@ -121,7 +123,7 @@ namespace BMSDataStruct
 			return true;
 		}
 
-		public static bool TryRead(ReadOnlySpan<byte> buffer, out CurrentLimits value)
+		public bool TryRead(ReadOnlySpan<byte> buffer, out CurrentLimits value)
 		{
 			if (buffer.Length < Size)
 			{
@@ -146,7 +148,7 @@ namespace BMSDataStruct
 		float MaxDischargingWarning { get; set; } = maxDischargingWarning;
 		float MaxDischargingTemperatureWarning { get; set; } = maxDischargingTemperatureWarning;
 
-		public static int Size => 4 * sizeof(float);
+		public int Size => 4 * sizeof(float);
 
         public bool TryWrite(Span<byte> buffer, out int written)
         {
@@ -165,7 +167,7 @@ namespace BMSDataStruct
             return true;
         }
 
-        public static bool TryRead(ReadOnlySpan<byte> buffer, out CurrentWarningLimits value)
+        public bool TryRead(ReadOnlySpan<byte> buffer, out CurrentWarningLimits value)
         {
             if (buffer.Length < Size)
             {
@@ -193,7 +195,7 @@ namespace BMSDataStruct
 		float MinPackVoltage { get; set; } = minPackVoltage;
 		float MaxPackVoltageCharging { get; set; } = maxPackVoltageCharging;
 
-		public static int Size => 6 * sizeof(float);
+		public int Size => 6 * sizeof(float);
 
         public bool TryWrite(Span<byte> buffer, out int written)
         {
@@ -214,7 +216,7 @@ namespace BMSDataStruct
             return true;
         }
 
-        public static bool TryRead(ReadOnlySpan<byte> buffer, out VoltageLimits value)
+        public bool TryRead(ReadOnlySpan<byte> buffer, out VoltageLimits value)
         {
             if (buffer.Length < Size)
             {
@@ -244,7 +246,7 @@ namespace BMSDataStruct
 		float MinPackWarning { get; set; } = minPackWarning;
 		float MaxPackWarningCharging { get; set; } = maxPackWarningCharging;
 
-		public static int Size => 6 * sizeof(float);
+		public int Size => 6 * sizeof(float);
 
         public bool TryWrite(Span<byte> buffer, out int written)
         {
@@ -265,7 +267,7 @@ namespace BMSDataStruct
             return true;
         }
 
-        public static bool TryRead(ReadOnlySpan<byte> buffer, out VoltageWarningLimits value)
+        public bool TryRead(ReadOnlySpan<byte> buffer, out VoltageWarningLimits value)
         {
             if (buffer.Length < Size)
             {
@@ -292,7 +294,7 @@ namespace BMSDataStruct
 		float HoldDutyCycle { get; set; } = holdDutyCycle;
 		float PullInDutyCycle { get; set; } = pullInDutyCycle;
 
-		public static int Size => sizeof(bool) + sizeof(uint) + sizeof(float) * 2;
+		public int Size => sizeof(bool) + sizeof(uint) + sizeof(float) * 2;
 
         public bool TryWrite(Span<byte> buffer, out int written)
         {
@@ -313,7 +315,7 @@ namespace BMSDataStruct
             return true;
         }
 
-        public static bool TryRead(ReadOnlySpan<byte> buffer, out Contactor value)
+        public bool TryRead(ReadOnlySpan<byte> buffer, out Contactor value)
         {
             if (buffer.Length < Size)
             {
@@ -331,63 +333,260 @@ namespace BMSDataStruct
         }
     };
 
-	struct ContactorConfiguration
-	{
+	struct ContactorConfiguration(uint contactorPwmFrequency, Contactor mainHighSide, Contactor mainLowSide, Contactor charge, Contactor precharge) : IConfigEntry<ContactorConfiguration>
+    {
+		uint ContactorPwmFrequency { get; set; } = contactorPwmFrequency;
+		Contactor MainHighSide { get; set; } = mainHighSide;
+		Contactor MainLowSide { get; set; } = mainLowSide;
+		Contactor Charge { get; set; } = charge;
+		Contactor Precharge { get; set; } = precharge;
 
+		public int Size => sizeof(uint) + MainHighSide.Size * 4;
 
-		uint ContactorPwmFrequency;
-		Contactor MainHighSide;
-		Contactor MainLowSide;
-		Contactor Charge;
-		Contactor Precharge;
+        public bool TryWrite(Span<byte> buffer, out int written)
+        {
+            if (buffer.Length < Size)
+            {
+                written = 0;
+                return false;
+            }
+
+			int temp; //Hold temp values for how much has written to Contactor variable
+            BinaryPrimitives.WriteUInt32LittleEndian(buffer, ContactorPwmFrequency);
+
+			if (MainHighSide.TryWrite(buffer.Slice(sizeof(uint)), out temp))
+			{
+				if (MainLowSide.TryWrite(buffer.Slice(sizeof(uint)), out temp))
+				{
+					if (Charge.TryWrite(buffer.Slice(sizeof(uint)), out temp))
+					{
+						if (Precharge.TryWrite(buffer.Slice(sizeof(uint)), out temp))
+						{
+							written = Size;
+							return true;
+						}
+						else //Can't write Precharge
+						{
+							written = Size - Precharge.Size; 
+							return false;
+						}
+					}
+					else //Can't write Charge
+					{
+						written = Size - Charge.Size * 2;
+						return false;
+					}
+				}
+				else //Can't write MainLowSide
+				{
+					written = Size - MainLowSide.Size * 3;
+					return false;
+				}
+			}
+			else //Can't write MainHighSide
+			{
+				written = sizeof(uint);
+				return false;
+			}
+        }
+
+        public bool TryRead(ReadOnlySpan<byte> buffer, out ContactorConfiguration value)
+        {
+            if (buffer.Length < Size)
+            {
+                value = default;
+                return false;
+            }
+
+            uint contactorPwmFrequency = BinaryPrimitives.ReadUInt32LittleEndian(buffer);
+
+			bool mainHighBool = MainHighSide.TryRead(buffer.Slice(sizeof(uint)), out Contactor mainHighSide);
+            bool mainLowBool = MainLowSide.TryRead(buffer.Slice(sizeof(uint) + MainLowSide.Size), out Contactor mainLowSide);
+			bool chargeBool = Charge.TryRead(buffer.Slice(sizeof(uint) + Charge.Size * 2), out Contactor charge);
+			bool prechargeBool = Precharge.TryRead(buffer.Slice(sizeof(uint) + Precharge.Size * 3), out Contactor precharge);
+            
+			if (mainLowBool & mainHighBool & chargeBool & prechargeBool)
+			{
+                value = new ContactorConfiguration(contactorPwmFrequency, mainHighSide, mainLowSide, charge, precharge);
+				return true;
+            }
+			else
+			{
+				value = default;
+				return false;
+			}
+        }
 	};
 
-	struct PrechargeConfiguration
+	struct PrechargeConfiguration(bool invertSignal, float delay) : IConfigEntry<PrechargeConfiguration>
 	{
-		bool InvertSignal;
-		float Delay;
-	};
+		bool InvertSignal { get; set; } = invertSignal;
+		float Delay { get; set; } = delay;
+
+		public int Size => sizeof(bool) + sizeof(float);
+
+        public bool TryWrite(Span<byte> buffer, out int written)
+        {
+            if (buffer.Length < Size)
+            {
+                written = 0;
+                return false;
+            }
+
+            Span<byte> invertSignalByteSpan = BitConverter.GetBytes(InvertSignal);     //Convert enable to byte span
+            invertSignalByteSpan.CopyTo(buffer.Slice(0, sizeof(bool)));           //Copy enableByteSpan to first part of the buffer
+			BinaryPrimitives.WriteSingleLittleEndian(buffer.Slice(sizeof(bool)), Delay); 
+
+            written = Size;
+            return true;
+        }
+
+        public bool TryRead(ReadOnlySpan<byte> buffer, out PrechargeConfiguration value)
+        {
+            if (buffer.Length < Size)
+            {
+                value = default;
+                return false;
+            }
+
+            bool invertSignal = BitConverter.ToBoolean(buffer.Slice(0, sizeof(bool)));
+            float delay = BinaryPrimitives.ReadSingleLittleEndian(buffer.Slice(sizeof(bool)));
+
+            value = new PrechargeConfiguration(invertSignal, delay);
+            return true;
+        }
+    };
 }
 
 namespace BMSCharacterization
 {
-	struct VoltageWattHoursTable
+	struct VoltageWattHoursTable(uint length, float current, float startVoltage, float step, float[] wattHours) : IConfigEntry<VoltageWattHoursTable>
 	{
-		uint Length;
-		float Current;
-		float StartVoltage;
-		float Step;
-		float[] WattHours;
+		uint Length { get; set; } = length;
+		float Current { get; set; } = current;
+		float StartVoltage { get; set; } = startVoltage;
+		float Step { get; set; } = step;
+		float[] WattHours { get; set; } = wattHours;
 
-		private static bool TryWrite(Span<byte> buffer)
-		{
-			return false;
-		}
-		static bool TryRead(Span<byte> buffer, out VoltageWattHoursTable characterization)
-		{
-			characterization = new VoltageWattHoursTable();
-			return true;
-		}
 
-	}
-	struct VoltageResistanceTable
-	{
-		uint Length;
-		float Current;
-		float StartVoltage;
-		float Step;
-		float[] Resistance;
+		public int Size => sizeof(uint) + 4 * sizeof(float); //unfinished
 
-		private static bool TryWrite(Span<byte> buffer)
-		{
-			return false;
-		}
+        public bool TryWrite(Span<byte> buffer, out int written)
+        {
+            if (buffer.Length < Size)
+            {
+                written = 0;
+                return false;
+            }
 
-		private static bool TryRead(ReadOnlySpan<byte> buffer, out VoltageResistanceTable characterization)
-		{
-			characterization = default;
-			return false;
-		}
-	}
+			BinaryPrimitives.WriteUInt32LittleEndian(buffer, Length);
+            BinaryPrimitives.WriteSingleLittleEndian(buffer.Slice(sizeof(uint)), Current);
+            BinaryPrimitives.WriteSingleLittleEndian(buffer.Slice(sizeof(uint) + sizeof(float)), StartVoltage);
+            BinaryPrimitives.WriteSingleLittleEndian(buffer.Slice(sizeof(uint) + 2 * sizeof(float)), Step);
+            for (int i = 0; i < WattHours.Length; i++)
+			{
+                BinaryPrimitives.WriteSingleLittleEndian(buffer.Slice(sizeof(uint) + (3+i) * sizeof(float)), WattHours[i]);
+            }
+
+            written = Size;
+            return true;
+        }
+
+        public bool TryRead(ReadOnlySpan<byte> buffer, out VoltageWattHoursTable value)
+        {
+            if (buffer.Length < Size)
+            {
+                value = default;
+                return false;
+            }
+
+			uint length = BinaryPrimitives.ReadUInt32LittleEndian(buffer);
+            float current = BinaryPrimitives.ReadSingleLittleEndian(buffer.Slice(sizeof(uint)));
+			float startVoltage = BinaryPrimitives.ReadSingleLittleEndian(buffer.Slice(sizeof(uint) + sizeof(float)));
+			float step = BinaryPrimitives.ReadSingleLittleEndian(buffer.Slice(sizeof(uint) + sizeof(float) * 2));
+			float[] wattHours = default;
+			int offset = 0;
+
+			while (true)
+			{
+				try
+				{
+					wattHours[offset] = BinaryPrimitives.ReadSingleLittleEndian(buffer.Slice(sizeof(uint) + sizeof(float) * (3 + offset)));
+                }
+				catch (ArgumentOutOfRangeException argumentOutOfRangeException)
+				{
+					break;
+				}
+				offset++;
+			}
+
+            value = new VoltageWattHoursTable(length, current, startVoltage, step, wattHours);
+            return true;
+        }
+    }
+    struct VoltageResistanceTable(uint length, float current, float startVoltage, float step, float[] resistance)
+    {
+        uint Length { get; set; } = length;
+        float Current { get; set; } = current;
+        float StartVoltage { get; set; } = startVoltage;
+        float Step { get; set; } = step;
+        float[] Resistance { get; set; } = resistance;
+
+
+        public int Size => sizeof(uint) + 4 * sizeof(float); //unfinished
+
+        public bool TryWrite(Span<byte> buffer, out int written)
+        {
+            if (buffer.Length < Size)
+            {
+                written = 0;
+                return false;
+            }
+
+            BinaryPrimitives.WriteUInt32LittleEndian(buffer, Length);
+            BinaryPrimitives.WriteSingleLittleEndian(buffer.Slice(sizeof(uint)), Current);
+            BinaryPrimitives.WriteSingleLittleEndian(buffer.Slice(sizeof(uint) + sizeof(float)), StartVoltage);
+            BinaryPrimitives.WriteSingleLittleEndian(buffer.Slice(sizeof(uint) + 2 * sizeof(float)), Step);
+            for (int i = 0; i < Resistance.Length; i++)
+            {
+                BinaryPrimitives.WriteSingleLittleEndian(buffer.Slice(sizeof(uint) + (3 + i) * sizeof(float)), Resistance[i]);
+            }
+
+            written = Size;
+            return true;
+        }
+
+        public bool TryRead(ReadOnlySpan<byte> buffer, out VoltageWattHoursTable value)
+        {
+            if (buffer.Length < Size)
+            {
+                value = default;
+                return false;
+            }
+
+            uint length = BinaryPrimitives.ReadUInt32LittleEndian(buffer);
+            float current = BinaryPrimitives.ReadSingleLittleEndian(buffer.Slice(sizeof(uint)));
+            float startVoltage = BinaryPrimitives.ReadSingleLittleEndian(buffer.Slice(sizeof(uint) + sizeof(float)));
+            float step = BinaryPrimitives.ReadSingleLittleEndian(buffer.Slice(sizeof(uint) + sizeof(float) * 2));
+            float[] resistance = default;
+            int offset = 0;
+
+            while (true)
+            {
+                try
+                {
+                    resistance[offset] = BinaryPrimitives.ReadSingleLittleEndian(buffer.Slice(sizeof(uint) + sizeof(float) * (3 + offset)));
+                }
+                catch (ArgumentOutOfRangeException argumentOutOfRangeException)
+                {
+                    break;
+                }
+                offset++;
+            }
+
+            value = new VoltageWattHoursTable(length, current, startVoltage, step, resistance);
+            return true;
+        }
+    }
 }// namespace Characterization
 
