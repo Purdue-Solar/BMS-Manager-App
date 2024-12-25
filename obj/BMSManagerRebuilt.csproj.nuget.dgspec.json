@@ -56,15 +56,15 @@
             },
             "Microsoft.Extensions.Logging": {
               "target": "Package",
-              "version": "[8.0.1, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Logging.Console": {
               "target": "Package",
-              "version": "[8.0.1, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
-              "version": "[8.0.1, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Windows.SDK.BuildTools": {
               "target": "Package",
@@ -72,7 +72,7 @@
             },
             "Microsoft.WindowsAppSDK": {
               "target": "Package",
-              "version": "[1.6.240923002, )"
+              "version": "[1.6.241114003, )"
             },
             "PInvoke.User32": {
               "target": "Package",
@@ -80,11 +80,15 @@
             },
             "ScottPlot": {
               "target": "Package",
-              "version": "[5.0.43, )"
+              "version": "[5.0.47, )"
+            },
+            "System.IO.FileSystem": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             },
             "System.IO.Ports": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[9.0.0, )"
             },
             "System.Threading.Tasks": {
               "target": "Package",
@@ -92,7 +96,7 @@
             },
             "System.Windows.Extensions": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[9.0.0, )"
             }
           },
           "imports": [

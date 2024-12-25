@@ -36,7 +36,7 @@ namespace BMSManagerRebuilt
             this.InitializeComponent();
         }
 
-        /// <summary>
+        /// <summary>s
         /// Invoked when the application is launched.
         /// </summary>
         /// <param name="args">Details about the launch request and process.</param>

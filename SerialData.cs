@@ -460,6 +460,14 @@ namespace BMSDataStruct
 
 namespace BMSCharacterization
 {
+    /// <summary>
+    /// Variable storing VOltage Watt Hours values in a table
+    /// </summary>
+    /// <param name="length">Length of the table</param>
+    /// <param name="current">Current values</param>
+    /// <param name="startVoltage">Initial Voltage</param>
+    /// <param name="step">Voltage increment</param>
+    /// <param name="wattHours">Array storing watt hours value according to different voltage</param>
 	struct VoltageWattHoursTable(uint length, float current, float startVoltage, float step, float[] wattHours) : IConfigEntry<VoltageWattHoursTable>
 	{
 		uint Length { get; set; } = length;
@@ -468,8 +476,7 @@ namespace BMSCharacterization
 		float Step { get; set; } = step;
 		float[] WattHours { get; set; } = wattHours;
 
-
-		public int Size => sizeof(uint) + 4 * sizeof(float); //unfinished
+		public int Size => sizeof(uint) + (3 + (int) Length) * sizeof(float); //unfinished
 
         public bool TryWrite(Span<byte> buffer, out int written)
         {
@@ -533,7 +540,7 @@ namespace BMSCharacterization
         float[] Resistance { get; set; } = resistance;
 
 
-        public int Size => sizeof(uint) + 4 * sizeof(float); //unfinished
+        public int Size => sizeof(uint) + (3 + (int) Length) * sizeof(float); //unfinished
 
         public bool TryWrite(Span<byte> buffer, out int written)
         {
@@ -556,7 +563,7 @@ namespace BMSCharacterization
             return true;
         }
 
-        public bool TryRead(ReadOnlySpan<byte> buffer, out VoltageWattHoursTable value)
+        public bool TryRead(ReadOnlySpan<byte> buffer, out VoltageResistanceTable value)
         {
             if (buffer.Length < Size)
             {
@@ -584,7 +591,7 @@ namespace BMSCharacterization
                 offset++;
             }
 
-            value = new VoltageWattHoursTable(length, current, startVoltage, step, resistance);
+            value = new VoltageResistanceTable(length, current, startVoltage, step, resistance);
             return true;
         }
     }

@@ -107,8 +107,14 @@ namespace BMSManagerRebuilt
             }
         }
 
+    
 
         //Port operation
+        /// <summary>
+        /// Detect New Port Names
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PortDetect(object sender, RoutedEventArgs e)
         {
             logger.LogDebug("Run Port Detection");
@@ -116,6 +122,11 @@ namespace BMSManagerRebuilt
             PortsBox.ItemsSource = portsNames;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PortSelect(object sender, SelectionChangedEventArgs e)
         {
             if (portsNames.Length > 0 & !portConnected)
