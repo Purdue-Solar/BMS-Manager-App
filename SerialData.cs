@@ -592,7 +592,7 @@ namespace BMSCharacterization
             }
 
             value = new VoltageResistanceTable(length, current, startVoltage, step, resistance);
-            return true;
+            return true;#if
         }
     }
 }// namespace Characterization
