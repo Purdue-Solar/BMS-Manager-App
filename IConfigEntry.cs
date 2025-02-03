@@ -8,8 +8,8 @@ namespace BMSManagerRebuilt;
 
 public interface IConfigEntry<T> where T : IConfigEntry<T>
 {
-    abstract int Size { get; }
+    int Size { get; }
 
-    abstract bool TryWrite(Span<byte> buffer, out int written);
+    bool TryWrite(Span<byte> buffer, out int written);
     abstract bool TryRead(ReadOnlySpan<byte> buffer, out T value);
 }

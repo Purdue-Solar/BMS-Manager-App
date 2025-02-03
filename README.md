@@ -1,35 +1,20 @@
-# Design Log
-<h3>Before 10/19/2024</h3> <br/>
-Application run on .Net8 Framework with WinUI 3 for GUI<br/>
-Added Serial Port Detection<br/>
-Added GUI<br/>
-Added Buttons and Text Boxes<br/>
-Added Serial Port Switching<br/>
-Added Serial Port Write (Testing with an Arduino)<br/>
-<h3>10/19/2024</h3><br/>
-Added Logging capabilities<br/>
-Fixing Port Selecting Bug where the program crash because it is reading into and empty array<br/>
-Added Disconnect Button (if disconnected have to replug the port in again because can only open port once)<br/>
-Added Background color
+## Battery Management System (BMS) - GUI Application
+Purdue Solar Racing Battery Management System (BMS) GUI interface for version 1.0.0 PSR-BMS.
 
-<h3>10/24/2024</h3><br/>
-Added Json Decoder reference text file<br/>
+### Current Features
+- Configuration of BMS parameters
+- CSV Reader for Battery Characterization Data
+- Data Interpolation
 
-<h3>10/26/2024</h3><br/>
-Added Serial Port Read<br/>
-Added Serial Port Write<br/>
-Testing Serial Function with arduino<br/>
+### Future Features
+- Data Logging
+- Data Visualization
+- Serial Port Communication
+- Live Battery Data Monitoring
 
-<h3>10/29/2024</h3><br/>
-Finish testing serial port read and write (sucessfull)<br/>
-
-<h3>11/02/2024</h3><br/>
-Added serial data structure definition (unfinished)<br/>
-
-<h3>11/09/2024</h3><br/>
-Added Warning windows<br/>
-
-<h3>Future addition</h3> <br\>
-Add Window Tab<br/>
-Add Json Encoder/Reader<br/>
-Add Json Decoder<br/>
+### How to contribute
+1. Clone the repository
+2. Download [Visual Studio](https://visualstudio.microsoft.com/vs/community/)
+	- Download .NET Desktop Development and Window Application Development workloads
+3. Open Solution (.sln) in Visual Studio
+4. Start Coding!

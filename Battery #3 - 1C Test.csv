@@ -1,4 +1,4 @@
-Load Time (s),Voltage (V),Resistance (ohms),Current (Amps),Absolute time (s)
+LoadTime,Voltage,Resistance,Current,AbsoluteTime
 30,4.07586,0.012252,4.9,32.2
 60,4.16249,0.012246,4.9,64.4
 90,4.11143,0.012225,4.9,96.6

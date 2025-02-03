@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window x:ConnectionId='1'
+    x:Class="BMSManagerRebuilt.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BMSManagerRebuilt"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"                                 
+    xmlns:ScottPlot="using:ScottPlot.WinUI">
+
+    <ScrollViewer x:ConnectionId='2' x:Name="MyScrollViewer" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Disabled">
+        <StackPanel Background="DimGray">
+            <TextBlock Text="PSR BMS GUI ver 1.0.0" Foreground="Orange" FontWeight="Bold" FontSize="30" FontFamily="Times New Roman" VerticalAlignment="Top"/>
+            <TabView IsAddTabButtonVisible="False">
+                <TabViewItem Header="PARAMs CONFIGURATION" HorizontalContentAlignment="Center" Background="Gray" Foreground="White" IsClosable="False">
+                    <StackPanel HorizontalAlignment="Center">
+                        <TextBlock Text="Parameters Configuration" Foreground="AntiqueWhite" FontWeight="Bold" FontSize="30" HorizontalAlignment="Center"/>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                                <TextBlock Text="Contactor Configuration" Foreground="FloralWhite" FontSize="17" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,15,0"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBlock Text="Main High Side" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="25,10,35,5"/>
+                                        <TextBlock Text="Main Low Side" VerticalAlignment="Center" HorizontalAlignment="Center"  Margin="25,10,35,5"/>
+                                        <TextBlock Text="Charge" VerticalAlignment="Center" HorizontalAlignment="Center"         Margin="25,5,35,10"/>
+                                        <TextBlock Text="PreCharge" VerticalAlignment="Center" HorizontalAlignment="Center"      Margin="25,5,35,0"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBox PlaceholderText="Values" Margin="0,5,0,0"/>
+                                        <TextBox PlaceholderText="Values"/>
+                                        <TextBox PlaceholderText="Values"/>
+                                        <TextBox PlaceholderText="Values"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBlock Text="X" FontWeight="ExtraBold" Foreground="Red" Margin="20,12,7,7"/>
+                                        <TextBlock Text="X" Margin="20,7,7,7" FontWeight="ExtraBold" Foreground="Red"/>
+                                        <TextBlock Text="X" Margin="20,7,7,7" FontWeight="ExtraBold" Foreground="Red"/>
+                                        <TextBlock Text="X" Margin="20,7,7,7" FontWeight="ExtraBold" Foreground="Red"/>
+                                    </StackPanel>
+                                </StackPanel>
+
+                                <TextBlock Text="Isolation Limits" Foreground="FloralWhite" FontSize="17" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,20,15,0"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBlock Text="Isolation Resistance" VerticalAlignment="Center" HorizontalTextAlignment="Center" HorizontalAlignment="Center" Margin="25,10,25,0"/>
+                                        <TextBlock Text="Isolation Resistance &#10;Warning" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalTextAlignment="Center" Margin="25,15,25,0"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBox PlaceholderText="Values" Margin="5"/>
+                                        <TextBox PlaceholderText="Values" Margin="5"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                        <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                            <Line Stroke="Black" Y1="600" Margin="5,10,15,0"/>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="Current Warning limit" Foreground="FloralWhite" FontSize="17" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,35,15,0"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBlock Text="Max Charging Warning" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"/>
+                                        <TextBlock Text="Max Charging&#10;Temperature Warning" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalTextAlignment="Center" Margin="10"/>
+                                        <TextBlock Text="Max Discharging Warning" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5"/>
+                                        <TextBlock Text="Max Discharging &#10; Temperature Warning" HorizontalTextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,7,0,10"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBox PlaceholderText="Values" Margin="5"/>
+                                        <TextBox PlaceholderText="Values" Margin="5"/>
+                                        <TextBox PlaceholderText="Values" Margin="5"/>
+                                        <TextBox PlaceholderText="Values" Margin="5"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                        <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                        <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                        <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                    </StackPanel>
+                                </StackPanel>
+                                <TextBlock Text="Current Limits&#10; Configuration" Foreground="FloralWhite" FontSize="17" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,20,0,0"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBlock Text="Max Charging" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5"/>
+                                        <TextBlock Text="Max Charging &#10; Temperature" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"/>
+                                        <TextBlock Text="Max Discharging" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5"/>
+                                        <TextBlock Text="Max Discharging&#10;Temperature" HorizontalTextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"/>
+                                        <TextBlock Text="Max Pulse Discharge" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,10,0,5"/>
+                                        <TextBlock Text="Max Pulse Discharge &#10; Duration" HorizontalTextAlignment="Center"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20,10,20,0"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBox PlaceholderText="Values" Margin="5"/>
+                                        <TextBox PlaceholderText="Values" Margin="5"/>
+                                        <TextBox PlaceholderText="Values" Margin="5"/>
+                                        <TextBox PlaceholderText="Values" Margin="5"/>
+                                        <TextBox PlaceholderText="Values" Margin="5"/>
+                                        <TextBox PlaceholderText="Values" Margin="5"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                        <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                        <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                        <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                        <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                        <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                            <Line Stroke="Black" Y1="600" Margin="5,10,15,0"/>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="Voltage Limits&#10;Configuration" Foreground="FloralWhite" FontSize="17" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,15,0"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBlock Text="Max Cell Voltage" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"/>
+                                        <TextBlock Text="Min Cell Voltage" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"/>
+                                        <TextBlock Text="Max Cell Voltage &#10; Charging" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5"/>
+                                        <TextBlock Text="Max Pack Voltage" HorizontalTextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"/>
+                                        <TextBlock Text="Min Pack Voltage" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,10,0,5"/>
+                                        <TextBlock Text="Max Pack Voltage &#10; Charging" HorizontalTextAlignment="Center"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBox PlaceholderText="Values" Margin="5"/>
+                                        <TextBox PlaceholderText="Values" Margin="5"/>
+                                        <TextBox PlaceholderText="Values" Margin="5"/>
+                                        <TextBox PlaceholderText="Values" Margin="5"/>
+                                        <TextBox PlaceholderText="Values" Margin="5"/>
+                                        <TextBox PlaceholderText="Values" Margin="5"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                        <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                        <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                        <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                        <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                        <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                    </StackPanel>
+                                </StackPanel>
+
+                                <TextBlock Text="Voltage Warning&#10; Configuration" Foreground="FloralWhite" FontSize="17" FontWeight="Bold" HorizontalAlignment="Center" HorizontalTextAlignment="Center" Margin="0,10,20,0"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBlock Text="Max Cell Warning" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"/>
+                                        <TextBlock Text="Min Cell Warning" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"/>
+                                        <TextBlock Text="Max Cell Warning &#10; Charging" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5"/>
+                                        <TextBlock Text="Max Pack Warning" HorizontalTextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"/>
+                                        <TextBlock Text="Min Pack Warning" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,10,0,5"/>
+                                        <TextBlock Text="Max Pack Warning &#10; Charging" HorizontalTextAlignment="Center"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBox PlaceholderText="Values" Margin="5"/>
+                                        <TextBox PlaceholderText="Values" Margin="5"/>
+                                        <TextBox PlaceholderText="Values" Margin="5"/>
+                                        <TextBox PlaceholderText="Values" Margin="5"/>
+                                        <TextBox PlaceholderText="Values" Margin="5"/>
+                                        <TextBox PlaceholderText="Values" Margin="5"/>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                        <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                        <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                        <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                        <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                        <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </TabViewItem>
+
+                <TabViewItem Header="TABLES CONFIGURATION" HorizontalContentAlignment="Center" Background="Gray" Foreground="White" IsClosable="False">
+                    <StackPanel>
+                        <TextBlock Text="Tables Configuration" Foreground="AntiqueWhite" FontWeight="Bold" FontSize="30" HorizontalAlignment="Center"/>
+                        <TabView HorizontalAlignment="Center" IsAddTabButtonVisible="False">
+
+                            <TabViewItem Header="PACK TOPOLOGY" HorizontalContentAlignment="Center" Background="Gray" Foreground="White" IsClosable="False">
+                                <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Vertical">
+                                        <Grid Height="500" Width="500" Background="White" VerticalAlignment="Center">
+                                            <ScottPlot:WinUIPlot x:ConnectionId='5' x:Name="WinUIPlot1"/>
+                                        </Grid>
+                                        <Button HorizontalAlignment="Center">
+                                            REFRESH
+                                        </Button>
+                                    </StackPanel>
+                                </StackPanel>
+                            </TabViewItem>
+
+                            <TabViewItem Header="VOLTAGE RESISTANCE&#10; CHARACTERIZATION" HorizontalContentAlignment="Center" Background="Gray" Foreground="White" IsClosable="False">
+                                <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Vertical">
+                                        <Grid Height="500" Width="500" Background="White" VerticalAlignment="Center">
+                                            <ScottPlot:WinUIPlot x:ConnectionId='4' x:Name="WinUIPlot2"/>
+                                        </Grid>
+                                        <Button HorizontalAlignment="Center">
+                                            REFRESH
+                                        </Button>
+                                    </StackPanel>
+                                </StackPanel>
+                            </TabViewItem>
+
+                            <TabViewItem Header="VOLTAGE WATTHOURS&#10; CHARACTERIZATION" HorizontalContentAlignment="Center" Background="Gray" Foreground="White" IsClosable="False">
+                                <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+                                        <Grid Height="500" Width="500" Background="White" VerticalAlignment="Center">
+                                            <ScottPlot:WinUIPlot x:ConnectionId='3' x:Name="WinUIPlot3"/>
+                                        </Grid>
+                                        <Button HorizontalAlignment="Center">
+                                            REFRESH
+                                        </Button>
+                                    </StackPanel>
+                                </StackPanel>
+                            </TabViewItem>
+
+                        </TabView>
+                    </StackPanel>
+                </TabViewItem>
+            </TabView>
+        </StackPanel>
+    </ScrollViewer>
+</Window>
+
