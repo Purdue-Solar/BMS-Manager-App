@@ -9,9 +9,14 @@
     mc:Ignorable="d" SizeChanged="Window_SizeChanged"
     xmlns:ScottPlot="using:ScottPlot.WinUI">
 
+
     <ScrollViewer x:Name="MyScrollViewer" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Disabled">
         <StackPanel Background="DimGray">
-            <TextBlock Text="PSR BMS GUI ver 1.0.0" Foreground="Orange" FontWeight="Bold" FontSize="30" FontFamily="Times New Roman" VerticalAlignment="Top"/>
+            <Grid>
+                <TextBlock Text="PSR BMS GUI ver 1.0.0" Foreground="Orange" FontWeight="Bold" FontSize="30" FontFamily="Times New Roman" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <Button HorizontalAlignment="Right" Margin="0,0,100,0" Width="100" BorderBrush="Black" Background="Gray">Imports</Button>
+                <Button HorizontalAlignment="Right" Width="100" BorderBrush="Black" Background="Gray">Extract</Button>
+            </Grid>
             <TabView IsAddTabButtonVisible="False">
                 <TabViewItem Header="PARAMs CONFIGURATION" HorizontalContentAlignment="Center" Background="Gray" Foreground="White" IsClosable="False">
                     <StackPanel HorizontalAlignment="Center">
@@ -167,9 +172,10 @@
                             </StackPanel>
                         </StackPanel>
                     </StackPanel>
+
                 </TabViewItem>
 
-                <TabViewItem Header="TABLES CONFIGURATION" HorizontalContentAlignment="Center" Background="Gray" Foreground="White" IsClosable="False">
+                <TabViewItem Header="CHARACTERs CONFIGURATION" HorizontalContentAlignment="Center" Background="Gray" Foreground="White" IsClosable="False">
                     <StackPanel>
                         <TextBlock Text="Tables Configuration" Foreground="AntiqueWhite" FontWeight="Bold" FontSize="30" HorizontalAlignment="Center"/>
                         <TabView HorizontalAlignment="Center" IsAddTabButtonVisible="False">
@@ -276,14 +282,13 @@
                                             <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
                                         </StackPanel>
                                     </StackPanel>
-
                                 </StackPanel>
                             </TabViewItem>
-
                         </TabView>
                     </StackPanel>
                 </TabViewItem>
             </TabView>
+
         </StackPanel>
     </ScrollViewer>
 </Window>

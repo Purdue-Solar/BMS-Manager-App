@@ -18,7 +18,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net9.0-windows10.0.19041.0\win-x64\AppX</LayoutDir>
-    <RegisteredManifestChecksum>B94702AC95139AD87F32C53B695BCAC292EAFE069CA393EA0A1952548516F9B7</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>FDF3F4D2907235C2FA1F0B6C2B04F2FF4DCBD22F6953ABAB8661F0E74DA994E1</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>d045cd07-06cd-4862-81a7-6736708f3d69_1.0.0.0_x64__5gyrq6psz227t</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>d045cd07-06cd-4862-81a7-6736708f3d69_5gyrq6psz227t!App</RegisteredUserModeAppID>
     <RegisteredPackageID>d045cd07-06cd-4862-81a7-6736708f3d69</RegisteredPackageID>
@@ -29,13 +29,13 @@
     <AppXManifest Include="D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net9.0-windows10.0.19041.0\win-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-02-03T05:17:01.011</Modified>
+      <Modified>2025-02-04T05:06:24.489</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net9.0-windows10.0.19041.0\win-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-02-03T05:17:00.839</Modified>
+      <Modified>2025-02-04T05:06:24.158</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net9.0-windows10.0.19041.0\win-x64\BMSManagerRebuilt.runtimeconfig.json">
       <PackagePath>BMSManagerRebuilt.runtimeconfig.json</PackagePath>
@@ -43,11 +43,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net9.0-windows10.0.19041.0\win-x64\BMSManagerRebuilt.dll">
       <PackagePath>BMSManagerRebuilt.dll</PackagePath>
-      <Modified>2025-02-03T05:17:00.690</Modified>
+      <Modified>2025-02-04T05:06:23.846</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net9.0-windows10.0.19041.0\win-x64\apphost.exe">
       <PackagePath>BMSManagerRebuilt.exe</PackagePath>
-      <Modified>2025-02-03T05:17:00.754</Modified>
+      <Modified>2025-02-04T05:06:23.931</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Admin\.nuget\packages\microsoft.web.webview2\1.0.2651.64\runtimes\win-x64\native\WebView2Loader.dll">
       <PackagePath>runtimes\win-x64\native\WebView2Loader.dll</PackagePath>
@@ -1031,7 +1031,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net9.0-windows10.0.19041.0\win-x64\BMSManagerRebuilt.deps.json">
       <PackagePath>BMSManagerRebuilt.deps.json</PackagePath>
-      <Modified>2025-02-03T04:56:32.833</Modified>
+      <Modified>2025-02-04T02:46:36.501</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Admin\.nuget\packages\livechartscore.skiasharpview.winui\2.0.0-rc5.1\lib\net8.0-windows10.0.19041\LiveChartsCore.SkiaSharpView.WinUI.pri">
       <PackagePath>LiveChartsCore.SkiaSharpView.WinUI.pri</PackagePath>

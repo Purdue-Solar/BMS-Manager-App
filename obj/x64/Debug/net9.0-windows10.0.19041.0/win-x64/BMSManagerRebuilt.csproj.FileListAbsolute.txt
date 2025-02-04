@@ -1,16 +1,12 @@
 D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net9.0-windows10.0.19041.0\win-x64\BMSManagerRebuilt.csproj.AssemblyReference.cache
 D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net9.0-windows10.0.19041.0\win-x64\App.g.i.cs
 D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net9.0-windows10.0.19041.0\win-x64\App.g.cs
-D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net9.0-windows10.0.19041.0\win-x64\errorWindows.g.i.cs
-D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net9.0-windows10.0.19041.0\win-x64\errorWindows.g.cs
 D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net9.0-windows10.0.19041.0\win-x64\MainWindow.g.i.cs
 D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net9.0-windows10.0.19041.0\win-x64\MainWindow.g.cs
 D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net9.0-windows10.0.19041.0\win-x64\XamlTypeInfo.g.cs
 D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net9.0-windows10.0.19041.0\win-x64\App.xaml
-D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net9.0-windows10.0.19041.0\win-x64\errorWindows.xaml
 D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net9.0-windows10.0.19041.0\win-x64\MainWindow.xaml
 D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net9.0-windows10.0.19041.0\win-x64\App.xbf
-D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net9.0-windows10.0.19041.0\win-x64\errorWindows.xbf
 D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net9.0-windows10.0.19041.0\win-x64\MainWindow.xbf
 D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net9.0-windows10.0.19041.0\win-x64\XamlSaveStateFile.xml
 D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net9.0-windows10.0.19041.0\win-x64\BMSManagerRebuilt.GeneratedMSBuildEditorConfig.editorconfig
@@ -21,7 +17,6 @@ D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net9.0-windows10.0.19041.0\win-x64
 D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net9.0-windows10.0.19041.0\win-x64\runtimes\win-x64\native\WebView2Loader.dll
 D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net9.0-windows10.0.19041.0\win-x64\BMSManagerRebuilt.exe
 D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net9.0-windows10.0.19041.0\win-x64\App.xbf
-D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net9.0-windows10.0.19041.0\win-x64\errorWindows.xbf
 D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net9.0-windows10.0.19041.0\win-x64\MainWindow.xbf
 D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net9.0-windows10.0.19041.0\win-x64\BMSManagerRebuilt.deps.json
 D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net9.0-windows10.0.19041.0\win-x64\BMSManagerRebuilt.runtimeconfig.json
@@ -296,3 +291,8 @@ D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net9.0-windows10.0.19041.0\win-x64
 D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net9.0-windows10.0.19041.0\win-x64\LiveChartsCore.Behaviours.dll
 D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net9.0-windows10.0.19041.0\win-x64\LiveChartsCore.SkiaSharpView.dll
 D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net9.0-windows10.0.19041.0\win-x64\LiveChartsCore.SkiaSharpView.WinUI.dll
+D:\Projects\App\BMS-Manager-App\bin\x64\Debug\net9.0-windows10.0.19041.0\win-x64\ErrorWindows\errorWindows.xbf
+D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net9.0-windows10.0.19041.0\win-x64\ErrorWindows\errorWindows.g.i.cs
+D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net9.0-windows10.0.19041.0\win-x64\ErrorWindows\errorWindows.g.cs
+D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net9.0-windows10.0.19041.0\win-x64\ErrorWindows\errorWindows.xaml
+D:\Projects\App\BMS-Manager-App\obj\x64\Debug\net9.0-windows10.0.19041.0\win-x64\ErrorWindows\errorWindows.xbf

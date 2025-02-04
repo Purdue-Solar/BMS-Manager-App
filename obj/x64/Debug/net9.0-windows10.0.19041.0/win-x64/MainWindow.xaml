@@ -9,9 +9,14 @@
     mc:Ignorable="d"                                 
     xmlns:ScottPlot="using:ScottPlot.WinUI">
 
+
     <ScrollViewer x:ConnectionId='2' x:Name="MyScrollViewer" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Disabled">
         <StackPanel Background="DimGray">
-            <TextBlock Text="PSR BMS GUI ver 1.0.0" Foreground="Orange" FontWeight="Bold" FontSize="30" FontFamily="Times New Roman" VerticalAlignment="Top"/>
+            <Grid>
+                <TextBlock Text="PSR BMS GUI ver 1.0.0" Foreground="Orange" FontWeight="Bold" FontSize="30" FontFamily="Times New Roman" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <Button HorizontalAlignment="Right" Margin="0,0,100,0" Width="100" BorderBrush="Black" Background="Gray">Imports</Button>
+                <Button HorizontalAlignment="Right" Width="100" BorderBrush="Black" Background="Gray">Extract</Button>
+            </Grid>
             <TabView IsAddTabButtonVisible="False">
                 <TabViewItem Header="PARAMs CONFIGURATION" HorizontalContentAlignment="Center" Background="Gray" Foreground="White" IsClosable="False">
                     <StackPanel HorizontalAlignment="Center">
@@ -116,7 +121,7 @@
                                         <TextBlock Text="Min Cell Voltage" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"/>
                                         <TextBlock Text="Max Cell Voltage &#10; Charging" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5"/>
                                         <TextBlock Text="Max Pack Voltage" HorizontalTextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"/>
-                                        <TextBlock Text="Min Pack Voltage" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,10,0,5"/>
+                                        <TextBlock Text="Min Pack Voltage" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,11,0,5"/>
                                         <TextBlock Text="Max Pack Voltage &#10; Charging" HorizontalTextAlignment="Center"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"/>
                                     </StackPanel>
                                     <StackPanel Orientation="Vertical">
@@ -142,10 +147,10 @@
                                     <StackPanel Orientation="Vertical">
                                         <TextBlock Text="Max Cell Warning" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"/>
                                         <TextBlock Text="Min Cell Warning" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"/>
-                                        <TextBlock Text="Max Cell Warning &#10; Charging" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5"/>
+                                        <TextBlock Text="Max Cell Warning&#10;Charging" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalTextAlignment="Center" Margin="5"/>
                                         <TextBlock Text="Max Pack Warning" HorizontalTextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"/>
-                                        <TextBlock Text="Min Pack Warning" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,10,0,5"/>
-                                        <TextBlock Text="Max Pack Warning &#10; Charging" HorizontalTextAlignment="Center"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"/>
+                                        <TextBlock Text="Min Pack Warning" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,11,0,5"/>
+                                        <TextBlock Text="Max Pack Warning&#10; Charging" HorizontalTextAlignment="Center"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"/>
                                     </StackPanel>
                                     <StackPanel Orientation="Vertical">
                                         <TextBox PlaceholderText="Values" Margin="5"/>
@@ -167,9 +172,10 @@
                             </StackPanel>
                         </StackPanel>
                     </StackPanel>
+
                 </TabViewItem>
 
-                <TabViewItem Header="TABLES CONFIGURATION" HorizontalContentAlignment="Center" Background="Gray" Foreground="White" IsClosable="False">
+                <TabViewItem Header="CHARACTERs CONFIGURATION" HorizontalContentAlignment="Center" Background="Gray" Foreground="White" IsClosable="False">
                     <StackPanel>
                         <TextBlock Text="Tables Configuration" Foreground="AntiqueWhite" FontWeight="Bold" FontSize="30" HorizontalAlignment="Center"/>
                         <TabView HorizontalAlignment="Center" IsAddTabButtonVisible="False">
@@ -184,6 +190,28 @@
                                             REFRESH
                                         </Button>
                                     </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,0,30">
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBlock Text="Cell Groups" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"/>
+                                            <TextBlock Text="Number of Parallel&#10; Cells" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalTextAlignment="Center" Margin="10,6,10,0"/>
+                                            <TextBlock Text="Number of Series&#10; Cells" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalTextAlignment="Center" Margin="10,5,10,0"/>
+                                            <TextBlock Text="Reserved" HorizontalTextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,15,10,0"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBox PlaceholderText="Values" Margin="5"/>
+                                            <TextBox PlaceholderText="Values" Margin="5"/>
+                                            <TextBox PlaceholderText="Values" Margin="5"/>
+                                            <TextBox PlaceholderText="Values" Margin="5"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                            <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                            <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                            <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                        </StackPanel>
+                                    </StackPanel>
+
                                 </StackPanel>
                             </TabViewItem>
 
@@ -197,6 +225,29 @@
                                             REFRESH
                                         </Button>
                                     </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,0,30">
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBlock Text="Length" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="30,10,10,10"/>
+                                            <TextBlock Text="Currents" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalTextAlignment="Center" Margin="30,15,10,0"/>
+                                            <TextBlock Text="Start Voltage" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalTextAlignment="Center" Margin="30,20,10,0"/>
+                                            <TextBlock Text="Steps" HorizontalTextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="30,24,10,0"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBox PlaceholderText="Values" Margin="5,5,5,5"/>
+                                            <TextBox PlaceholderText="Values" Margin="5,5,5,5"/>
+                                            <TextBox PlaceholderText="Values" Margin="5,5,5,5"/>
+                                            <TextBox PlaceholderText="Values" Margin="5,5,5,5"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                            <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                            <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                            <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                        </StackPanel>
+                                    </StackPanel>
+
+
                                 </StackPanel>
                             </TabViewItem>
 
@@ -210,13 +261,34 @@
                                             REFRESH
                                         </Button>
                                     </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,0,30">
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBlock Text="Length" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="30,10,10,10"/>
+                                            <TextBlock Text="Currents" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalTextAlignment="Center" Margin="30,15,10,0"/>
+                                            <TextBlock Text="Start Voltage" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalTextAlignment="Center" Margin="30,20,10,0"/>
+                                            <TextBlock Text="Steps" HorizontalTextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="30,24,10,0"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBox PlaceholderText="Values" Margin="5,5,5,5"/>
+                                            <TextBox PlaceholderText="Values" Margin="5,5,5,5"/>
+                                            <TextBox PlaceholderText="Values" Margin="5,5,5,5"/>
+                                            <TextBox PlaceholderText="Values" Margin="5,5,5,5"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Vertical">
+                                            <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                            <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                            <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                            <TextBlock Text="X" Margin="12" FontWeight="ExtraBold" Foreground="Red"/>
+                                        </StackPanel>
+                                    </StackPanel>
                                 </StackPanel>
                             </TabViewItem>
-
                         </TabView>
                     </StackPanel>
                 </TabViewItem>
             </TabView>
+
         </StackPanel>
     </ScrollViewer>
 </Window>

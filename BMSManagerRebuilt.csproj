@@ -14,7 +14,7 @@
 	<ApplicationIcon>Assets\PSR Logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="errorWindows.xaml" />
+    <None Remove="ErrorWindows/errorWindows.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -57,6 +57,9 @@
     <Page Update="errorWindows.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ErrorWindows\" />
   </ItemGroup>
 
   <!--
